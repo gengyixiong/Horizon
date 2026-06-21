@@ -5,227 +5,335 @@ date: 2026-06-21
 lang: en
 ---
 
-> From 45 items, 10 important content pieces were selected
+> From 55 candidates, selected 11 news items and 3 deep interviews/podcasts
 
 ---
 
-1. [Hyundai to Fully Own Boston Dynamics, Accelerating US IPO](#item-1) ⭐️ 9.0/10
-2. [Chengdu Embodied AI Robot Firm Lands 5,000-Unit Order](#item-2) ⭐️ 8.0/10
-3. [Humanoid Robot First to Summit Peak Above 6200m](#item-3) ⭐️ 8.0/10
-4. [World's First Universal Cerebellum for Humanoid Robots](#item-4) ⭐️ 8.0/10
-5. [Robots Learn from First-Person Human Videos, Surprising Results](#item-5) ⭐️ 8.0/10
-6. [Seres Humanoid Robot Debuts in Super Factory](#item-6) ⭐️ 7.0/10
-7. [Shenzhen Action Plan Aims for Global Embodied Intelligence Hub](#item-7) ⭐️ 7.0/10
-8. [Humanoid Robot Startup Raises Hundreds of Millions, Claims World Model Breakthrough](#item-8) ⭐️ 7.0/10
-9. [Solving Long-Horizon Tasks in Embodied AI: Data Scaling vs. Hierarchical Control](#item-9) ⭐️ 7.0/10
-10. [Hyundai's Atlas Robot Shows Pro-Level Soccer Moves](#item-10) ⭐️ 7.0/10
+## Contents
+
+### Humanoid Robotics News
+
+1. [Chengdu Embodied Robot Firm Lands 5000-Unit Order](#item-1) ⭐️ 8.0/10
+2. [Humanoid Robot Bianba Summits 6200m Volcano, Plans Everest](#item-2) ⭐️ 8.0/10
+3. [World's First Universal Cerebellum for Humanoid Robots](#item-3) ⭐️ 8.0/10
+4. [Hyundai Motor to Fully Acquire Boston Dynamics, Accelerating US IPO](#item-4) ⭐️ 8.0/10
+5. [Humanoid Robot Startup Secures Hundreds of Millions in First Year](#item-5) ⭐️ 7.0/10
+6. [2026 H1 Humanoid Robot Industry Deep Review](#item-6) ⭐️ 7.0/10
+7. [Seres Humanoid Robot Debuts at Super Factory](#item-7) ⭐️ 6.0/10
+8. [Shanghai Claims Unique Half-Hour Supply Chain for Embodied AI](#item-8) ⭐️ 6.0/10
+9. [Solving Long-Horizon Tasks in Embodied AI: Data Scaling vs. Hierarchical Control](#item-9) ⭐️ 6.0/10
+10. [Hyundai's Atlas Robot Shows Off Soccer Skills](#item-10) ⭐️ 6.0/10
+11. [How Sound Design Gave Amazon's Astro a Soul](#item-11) ⭐️ 5.0/10
+
+### Deep Interviews / Podcasts
+
+12. [Generalist's $400M Bet on Dexterous Robots for Physical AI](#item-12) ⭐️ 7.0/10
+13. [QNX: Deterministic Real-Time Systems Critical for Humanoid Robots](#item-13) ⭐️ 7.0/10
+14. [Open Source Embodied AI with Seeed Studio](#item-14) ⭐️ 7.0/10
 
 ---
+
+## Humanoid Robotics News
 
 <a id="item-1"></a>
-## [Hyundai to Fully Own Boston Dynamics, Accelerating US IPO](https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JeDNlVFdFdTQ5T2habGVBZ0NrY1U3MFVKRkZhdWVZQ1Zpd3hhQUFkbHNQbWRScmxSVVpQRXY3WHZUSHo1U0Yyc00wUUFOa0NoYXp3?oc=5) ⭐️ 9.0/10
+### [Chengdu Embodied Robot Firm Lands 5000-Unit Order](https://news.google.com/rss/articles/CBMiakFVX3lxTE5kRENjd3NVa212NmpFYlByOHFwdEZTSlZ6emQ4N3cteGFfNkk4bDhwcmVSTV90WHlzaE5nMmtJeUNtWGtCeFlNdERqM29qV1FySHVod2FvZTZwZWJkaHQxdW1vazIzN2FLNGc?oc=5) ⭐️ 8.0/10
 
-Hyundai Motor is set to acquire full control of Boston Dynamics from SoftBank, potentially speeding up the company's U.S. stock market listing. Full ownership allows Hyundai to streamline decision-making and push Boston Dynamics toward commercialization and an IPO, a major milestone for the humanoid robotics industry. SoftBank holds a put option that could force Hyundai to buy out its stake by June 2026, and Boston Dynamics' valuation has been reported at $28 billion.
+A Chengdu-based embodied intelligent robot company has secured a purchase order for 5,000 units, marking one of the largest commercial deployments of embodied robots in China. This order signals strong market demand and industrial progress for embodied intelligent robots, moving from prototypes to large-scale commercial applications, which could accelerate adoption across manufacturing, services, and healthcare. The order was reported by Sichuan Daily, a reputable regional newspaper, and the specific company name and robot model were not disclosed in the summary. The order size of 5,000 units is substantial for the emerging embodied robotics industry.
 
-rss · Humanoid Robotics News · Jun 19, 08:33
+rss · 人形机器人与具身智能（中文） · Jun 20, 22:54
 
-**Background**: Boston Dynamics is known for advanced robots like Spot and Atlas. Hyundai acquired a controlling stake in 2021, and full control could accelerate its IPO plans.
+**Background**: Embodied intelligent robots integrate perception, action, and cognition through physical interaction with the environment, enabling autonomous behavior in real-world scenarios. In 2025, the Chinese government included embodied intelligence and humanoid robots in its work report for the first time, boosting industry development. The sector has seen breakthroughs in vision systems and autonomous navigation, leading to billion-yuan orders in inspection, service, and manufacturing.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Boston_Dynamics">Boston Dynamics - Wikipedia</a></li>
-<li><a href="https://bostondynamics.com/news/hyundai-motor-group-completes-acquisition-of-boston-dynamics-from-softbank/">Hyundai Motor Group Acquires Boston Dynamics | Boston Dynamics</a></li>
-<li><a href="https://en.sedaily.com/finance/2026/01/16/boston-dynamics-eyes-us-ipo-as-valuation-soars-to-28-billion">Boston Dynamics Eyes US IPO as Valuation Soars to $28 Billion</a></li>
+<li><a href="https://news.cctv.com/2025/09/17/ARTI2QSCbbsRH9gQEBh6vxDw250917.shtml">加速迭代，爆发！具身智能机器人产业从硬科技突破与场景化落地双向发...</a></li>
+<li><a href="https://baike.baidu.com/item/具身智能/63286570">具身智能（智能体通过身体将感知、行动与认知深度融合的智能系统）_...</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#Boston Dynamics`, `#Hyundai`, `#acquisition`, `#IPO`, `#humanoid`
+**Tags**: `#deployment`, `#investment`, `#manufacturing`, `#humanoid robotics`, `#China`
 
 ---
 
 <a id="item-2"></a>
-## [Chengdu Embodied AI Robot Firm Lands 5,000-Unit Order](https://news.google.com/rss/articles/CBMiakFVX3lxTE5kRENjd3NVa212NmpFYlByOHFwdEZTSlZ6emQ4N3cteGFfNkk4bDhwcmVSTV90WHlzaE5nMmtJeUNtWGtCeFlNdERqM29qV1FySHVod2FvZTZwZWJkaHQxdW1vazIzN2FLNGc?oc=5) ⭐️ 8.0/10
+### [Humanoid Robot Bianba Summits 6200m Volcano, Plans Everest](https://news.google.com/rss/articles/CBMisgFBVV95cUxQdUtfZmplWV9hd245LTRDOFZPTjNkZ3BrVnoxbUtoTXZ1b1dHTDJOM3RiaW13Tk1CZGVZS1Y4RUdjQkdiRUF4SzQ5bDVhZVo3aEpDTGNZdFktcGxPUDdJVnhoRkZiRmUzSlJxNC16LVFENnJ5Rk9TMGxFcms3RUZqS0J3RWdlS3J2eFl6ekNZZlFNZlVvYy1DaFNXRk11bWswR3FoejFJX09uVHRpVnhROGJ3?oc=5) ⭐️ 8.0/10
 
-A Chengdu-based embodied intelligent robot company has secured a procurement order for 5,000 robots, as reported by Sichuan Daily. This marks one of the largest known commercial orders for embodied AI robots in China. This order signals strong commercial traction and market validation for embodied AI robots, moving beyond prototypes to large-scale deployment. It could accelerate investment and adoption of humanoid and embodied robots across industries. The specific company name and robot model were not disclosed in the report. The order size of 5,000 units is substantial, indicating confidence in the technology's readiness for real-world applications.
+A humanoid robot named Bianba, based on the Unitree G1, successfully climbed the 6200-meter Chimborazo volcano in Ecuador in 16 hours, marking the first time a humanoid robot has summited a peak above 6000 meters. The team plans to challenge Mount Everest in the future. This achievement demonstrates that humanoid robots can operate autonomously in extreme high-altitude environments, paving the way for applications in disaster response, exploration, and other hazardous settings. It also highlights the growing capabilities of affordable commercial humanoid platforms like the Unitree G1. The robot climbed largely autonomously, with some remote assistance, and was modified from the Unitree G1 with enhanced endurance and cold-weather components. The Unitree G1 is a 1.32-meter tall humanoid with 23-43 degrees of freedom, a top speed of 2 m/s, and a standard battery life of about 2 hours, which was extended for the climb.
 
-rss · 人形机器人与具身智能（中文） · Jun 20, 22:54
+rss · 人形机器人与具身智能（中文） · Jun 21, 06:01
 
-**Background**: Embodied intelligent robots, also known as embodied AI, are robots that perceive their environment through sensors and act via actuators, integrating AI to perform tasks autonomously. This field has seen rapid progress in China, with government support and increasing commercial interest.
+**Background**: Humanoid robots are designed to mimic human form and movement, enabling them to navigate environments built for humans. The Unitree G1 is a commercially available humanoid robot developed by Chinese company Unitree Robotics, known for its affordability and advanced locomotion capabilities. Extreme environment testing is crucial for validating robot durability and autonomy before deployment in real-world missions.
 
-**Tags**: `#deployment`, `#investment`, `#China`, `#embodied AI`, `#humanoid robots`
+<details><summary>References</summary>
+<ul>
+<li><a href="https://www.unitree.com/g1/">Humanoid robot G1_Humanoid Robot Functions ... - Unitree G1</a></li>
+<li><a href="https://www.borntoengineer.com/humanoid-robot-volcano-climb">Humanoid Robot Volcano Climb: Pemba The Robot Summits Ecuador ...</a></li>
+<li><a href="https://gripped.com/news/humanoid-robot-summits-a-mountain-in-ecuador/">Humanoid Robot Summits a Mountain in Ecuador - Gripped Magazine</a></li>
+
+</ul>
+</details>
+
+**Tags**: `#humanoid robot`, `#locomotion`, `#outdoor deployment`, `#Unitree G1`, `#extreme environment`
 
 ---
 
 <a id="item-3"></a>
-## [Humanoid Robot First to Summit Peak Above 6200m](https://news.google.com/rss/articles/CBMieEFVX3lxTE8xM243dC1kZUx2UUdBNHpRZXUwWXA0YWVLcU5heEFfeHpCOXM5cHRGSjFvSGlLSlJDWjFMZE1BcHB6MThxSWpDT2ZhLUloMTREOE9RTUZNeHZaeUxwdDZNd2k3Q2JuWXZQUHY1NFZ2aThCVmNJUmhDVQ?oc=5) ⭐️ 8.0/10
+### [World's First Universal Cerebellum for Humanoid Robots](https://news.google.com/rss/articles/CBMiSEFVX3lxTFBVRjFBYTVVMHhvUWtqdmxiZmZoaDRUcWg2YkVJTG1CT3BiM0ZENzdrUGhCdjNLTXVQRnBLNzZmclVkaF9RdTZQdA?oc=5) ⭐️ 8.0/10
 
-A humanoid robot named Pemba, modified from Unitree G1, successfully reached the summit of Ecuador's Chimborazo volcano at 6200 meters, marking the first time a humanoid robot has climbed a peak above 6200 meters. This achievement demonstrates the advanced bipedal locomotion and robustness of humanoid robots in extreme environments, paving the way for future applications in high-altitude exploration, disaster response, and planetary exploration. The robot took 16 hours to complete the ascent and is part of a 'Three Peaks' expedition plan, with the next target being Mount Everest. Pemba was equipped with cameras, sensors, satellite communication, and onboard AI for autonomous navigation.
+Galbot has released AstraBrain-WBC 0.5, the world's first universal cerebellum foundation model for humanoid robots, trained on 20,000 hours of human motion data, enabling zero-shot generalization to new tasks. This breakthrough significantly advances humanoid robot motion intelligence, allowing robots to perform unseen actions without task-specific training, which could accelerate the deployment of general-purpose humanoid robots in real-world applications. The model is a GPT-style foundation model for whole-body control, trained on the largest human motion dataset of 20,000 hours. It achieves zero-shot generalization, meaning it can handle novel tasks without fine-tuning.
 
-rss · 人形机器人与具身智能（中文） · Jun 21, 04:33
+rss · 人形机器人与具身智能（中文） · Jun 20, 03:20
 
-**Background**: Humanoid robots are designed to mimic human form and movement, enabling them to navigate environments built for humans. Unitree G1 is a commercially available humanoid robot known for its agility, capable of performing backflips and side flips. High-altitude climbing poses extreme challenges due to thin air, low temperatures, and rugged terrain.
+**Background**: Humanoid robots traditionally require task-specific programming or extensive reinforcement learning for each new movement. The cerebellum in biological systems coordinates fine motor control; analogously, a 'cerebellum model' in robotics handles real-time motion coordination. Zero-shot generalization allows a model to perform tasks it has never seen during training, a key goal in embodied AI.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://www.ithome.com/0/966/427.htm">人 形 机 器 人 成功 登 顶 海拔 6200 ...</a></li>
-<li><a href="https://news.mydrivers.com/1/1130/1130858.htm">人 形 机 器 人 成功 登 顶 海拔 6200 米 火 山 ：基于宇树G1改装 目标挑战珠峰</a></li>
-<li><a href="https://tech.ifeng.com/c/8u5q1dToOVF">人 形 机 器 人 成功 登 顶 海拔 6200 米 火 山 ：基于宇树G1改装 目标挑战珠峰</a></li>
+<li><a href="https://www.facebook.com/beijingdaily19521001/posts/a-milestone-for-humanoid-robotics-on-jun-19-galbot-officially-released-astrabrai/1048005064417417/">A milestone for humanoid robotics! On Jun. 19, #Galbot officially released ...</a></li>
+<li><a href="https://interestingengineering.com/ai-robotics/china-humanoid-robot-intelligence-300-fps-control">China unveils powerful 4B humanoid robot model with edge performance</a></li>
+<li><a href="https://news.cgtn.com/news/2026-03-24/Chinese-company-unveils-humanoid-robot-powered-by-GAE-model-1LLWTAAAv1C/share_amp.html">Chinese company unveils humanoid robot powered by general action foundation model</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#humanoid robot`, `#bipedal locomotion`, `#extreme environment`, `#milestone`, `#deployment`
+**Tags**: `#humanoid robots`, `#zero-shot generalization`, `#human motion data`, `#cerebellum`, `#embodied AI`
 
 ---
 
 <a id="item-4"></a>
-## [World's First Universal Cerebellum for Humanoid Robots](https://news.google.com/rss/articles/CBMiSEFVX3lxTFBVRjFBYTVVMHhvUWtqdmxiZmZoaDRUcWg2YkVJTG1CT3BiM0ZENzdrUGhCdjNLTXVQRnBLNzZmclVkaF9RdTZQdA?oc=5) ⭐️ 8.0/10
+### [Hyundai Motor to Fully Acquire Boston Dynamics, Accelerating US IPO](https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JeDNlVFdFdTQ5T2habGVBZ0NrY1U3MFVKRkZhdWVZQ1Zpd3hhQUFkbHNQbWRScmxSVVpQRXY3WHZUSHo1U0Yyc00wUUFOa0NoYXp3?oc=5) ⭐️ 8.0/10
 
-Researchers have developed the world's first universal cerebellum model for humanoid robots, trained on 20,000 hours of human motion data, enabling zero-shot generalization to new tasks without additional training. This breakthrough could significantly accelerate the deployment of humanoid robots in real-world applications by providing a foundational motion control system that works out of the box, similar to how GPT models revolutionized language AI. The model, named AstraBrain-WBC 0.5, is a whole-body control policy that leverages the largest human motion dataset to date. It achieves zero-shot generalization across diverse locomotion and manipulation tasks without fine-tuning.
+Hyundai Motor Group is set to take full control of Boston Dynamics, likely accelerating its US stock market listing. This move follows Hyundai's initial acquisition of a controlling stake in 2020. Full ownership gives Hyundai greater strategic flexibility to integrate Boston Dynamics' advanced humanoid robots into its automotive and industrial operations. A US IPO would provide capital for scaling production and competing with other humanoid robotics firms. The deal is expected to close soon, with Boston Dynamics' valuation potentially exceeding $1 billion. Boston Dynamics recently demonstrated its Atlas humanoid robot performing complex industrial tasks using a Large Behavior Model developed with Toyota Research Institute.
 
-rss · 人形机器人与具身智能（中文） · Jun 20, 03:20
+rss · Humanoid Robotics News · Jun 19, 08:33
 
-**Background**: Humanoid robots traditionally require task-specific programming or extensive reinforcement learning for each new movement. The 'cerebellum' analogy refers to the part of the brain responsible for coordination and balance; a universal cerebellum model aims to provide a general-purpose motion control foundation, analogous to how large language models provide a foundation for natural language tasks.
+**Background**: Boston Dynamics, founded in 1992 as an MIT spin-off, is known for advanced robots like Spot and Atlas. Hyundai acquired a controlling stake from SoftBank in 2020 for about $1 billion, seeking to leverage robotics for future mobility and manufacturing.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://interestingengineering.com/ai-robotics/china-humanoid-robot-intelligence-300-fps-control">China unveils powerful 4B humanoid robot model with edge...</a></li>
-<li><a href="https://www.emergentmind.com/topics/whole-body-control-wbc-policy">Whole-Body Control (WBC) Policy</a></li>
-<li><a href="https://ay-robots.com/blog/en/bc-z-zero-shot-task-generalization-with-robotic-imitation-learning-what-scale-really-means">BC-Z: Zero - Shot Task Generalization with Robotic ... | AY- Robots</a></li>
+<li><a href="https://bostondynamics.com/products/atlas/">Atlas Humanoid Robot | Boston Dynamics</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Boston_Dynamics">Boston Dynamics - Wikipedia</a></li>
+<li><a href="https://spectrum.ieee.org/hyundai-buys-boston-dynamics">Hyundai Buys Boston Dynamics for Nearly $1 Billion. - IEEE Spectrum</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#humanoid robotics`, `#motion data`, `#zero-shot generalization`, `#cerebellum`, `#embodied AI`
+**Tags**: `#Boston Dynamics`, `#Hyundai Motor`, `#investment`, `#IPO`, `#humanoid robotics`
 
 ---
 
 <a id="item-5"></a>
-## [Robots Learn from First-Person Human Videos, Surprising Results](https://news.google.com/rss/articles/CBMiSEFVX3lxTE4yZDhlVWp0REtYQTh2ZlBvNExKVXJOMG82SDlXUGNzUkhtcFQza0lENEZPdFkwMm5GUjJiTGZObENqMlJPbXVqRg?oc=5) ⭐️ 8.0/10
+### [Humanoid Robot Startup Secures Hundreds of Millions in First Year](https://news.google.com/rss/articles/CBMiU0FVX3lxTFBmdjljelNNSXo3bm5Ma2YzeFQ5TEF4aDlsUi1OYnN1c0U1b1NIbkFJOFg4QmFlbFkzd0tRWkFWSkctdDVMTjBTcmlsX0xJbmhWT1Vz?oc=5) ⭐️ 7.0/10
 
-Researchers have achieved a breakthrough in embodied intelligence where robots learn complex tasks by watching first-person human videos, yielding surprising effectiveness in skill transfer. This approach could dramatically reduce the need for manual programming or teleoperation in robot training, accelerating the deployment of humanoid robots in real-world environments. The method leverages egocentric video datasets and imitation learning algorithms to enable robots to infer actions and adapt them to their own embodiment, with results showing high task success rates.
+A humanoid robotics startup, referred to as a 'pragmatic dark horse' in embodied intelligence, completed four funding rounds in its first year totaling hundreds of millions of RMB and secured 300 million RMB in orders, aiming to close the loop on embodied world models. This milestone signals growing market traction and investor confidence in humanoid robotics, particularly in China, where policy support and labor shortages are accelerating commercial deployment of embodied AI. The company's approach emphasizes pragmatic, real-world deployment over pure research, with orders already in place. The 'embodied world model' concept refers to an internal simulator that enables robots to predict and interact with physical environments.
 
-rss · 人形机器人与具身智能（中文） · Jun 19, 07:50
+rss · 人形机器人与具身智能（中文） · Jun 20, 04:30
 
-**Background**: Embodied intelligence focuses on AI systems that interact with the physical world through sensors and actuators. Learning from demonstration (LfD) is a paradigm where robots acquire skills by observing human experts, traditionally requiring structured demonstrations or teleoperation. First-person video offers a scalable source of human behavior data.
+**Background**: Embodied world models are a key research direction in embodied AI, enabling robots to understand and predict real-world dynamics. Recent breakthroughs in generative AI have accelerated progress, and Chinese policy initiatives like the 2026 Humanoid Robot Real-Scene Training Special Action are pushing for practical deployment.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Embodied_intelligence">Embodied intelligence</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Learning_from_demonstration">Learning from demonstration</a></li>
-<li><a href="https://arxiv.org/abs/1703.01040">[1703.01040] Learning Robot Activities from First-Person Human Videos Using Convolutional Future Regression</a></li>
+<li><a href="https://www.caixinglobal.com/2026-04-27/robot-era-raises-more-than-200-million-as-chinas-humanoid-robot-race-heats-up-102438549.html">Robot Era Raises Over $200 Million as Humanoid ... - Caixin Global</a></li>
+<li><a href="https://qubittool.com/blog/embodied-ai-2026-robot-foundation-models">Embodied AI 2026: From Robot Foundation Models to Industrial ...</a></li>
+<li><a href="https://arxiv.org/abs/2605.10653">[2605.10653] Embodied AI in Action: Insights from SAE World ... MIIT and SASAC Launch 2026 Humanoid Robot Real-Scene Training ... 2026 Embodied AI Factory Deployment: Humanoid Robots Lead ... 1st Workshop on Deployment of Foundation Models for Embodied AI China’s Embodied AI Industry in 2026: Approaching the ...</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#embodied intelligence`, `#robot learning`, `#humanoid robotics`, `#first-person video`, `#learning from demonstration`
+**Tags**: `#humanoid robotics`, `#funding`, `#embodied AI`, `#world model`, `#deployment`
 
 ---
 
 <a id="item-6"></a>
-## [Seres Humanoid Robot Debuts in Super Factory](https://news.google.com/rss/articles/CBMickFVX3lxTE01U01pU1lVdnpNWV9TSzU3aVFJS21oYk5IZWFtbThnQzhoelEtR1VRMXU0bDZpczZGSk9ONEN6NVhNQVh5Q01iZVVzVEp2MFZLR3lBY2hjbmJjMy1VQXVJM1BjdkR5cDNwZ1NycWlVY191UQ?oc=5) ⭐️ 7.0/10
+### [2026 H1 Humanoid Robot Industry Deep Review](https://news.google.com/rss/articles/CBMiUEFVX3lxTE03RXZwZlRzMmJJekFTT0NrekpQZENNMUFHVlJwOWlZU1lpSEgzUzZHVmxKajlMeXVNdjhYSWFZUVY4Q2Jha2FKY1g5WWF1WTdO?oc=5) ⭐️ 7.0/10
 
-Seres, a Chinese electric vehicle maker, has unveiled its first humanoid robot, named Xiaosai, which is now undergoing internal trials at its super factory. This marks Seres' entry into embodied robotics, joining other Chinese automakers like BYD and Xpeng in diversifying into humanoid robots for manufacturing, potentially accelerating industrial automation. The Xiaosai robot features AI vision and voice interaction capabilities, and its deployment in a real factory environment for trials indicates progress toward practical industrial use.
+Phoenix News published a comprehensive review of the humanoid robotics industry for the first half of 2026, analyzing key developments, market trends, and technology breakthroughs. This review provides valuable insights for investors, researchers, and industry stakeholders tracking the rapid evolution of humanoid robots, which are poised to transform manufacturing, healthcare, and service sectors. The article covers major product launches, funding rounds, and policy updates from January to June 2026, highlighting progress in dexterity, mobility, and AI integration.
 
-rss · 人形机器人与具身智能（中文） · Jun 20, 16:39
+rss · 人形机器人与具身智能（中文） · Jun 20, 14:17
 
-**Background**: Humanoid robots are designed to mimic human form and movement, making them suitable for tasks in human-centric environments like factories. Several Chinese automakers are investing in humanoid robotics to automate manufacturing and reduce labor costs.
+**Background**: Humanoid robots are general-purpose robots designed to mimic human form and movement. The industry has seen accelerated investment and deployment in recent years, driven by advances in AI, sensors, and actuators. This review contextualizes the first half of 2026 within that broader trend.
 
-<details><summary>References</summary>
-<ul>
-<li><a href="https://interestingengineering.com/ai-robotics/china-seres-humanoid-robot">Seres unveils Xiaosai humanoid robot with embodied 'intelligence'</a></li>
-<li><a href="https://cnevpost.com/2026/06/15/seres-debuts-humanoid-robot/">Seres debuts humanoid as Chinese automakers pile into robotics - CnEVPost</a></li>
-
-</ul>
-</details>
-
-**Tags**: `#humanoid robot`, `#deployment`, `#manufacturing`, `#Seres`, `#China`
+**Tags**: `#industry analysis`, `#market trends`, `#humanoid robots`, `#2026 review`
 
 ---
 
 <a id="item-7"></a>
-## [Shenzhen Action Plan Aims for Global Embodied Intelligence Hub](https://news.google.com/rss/articles/CBMimAFBVV95cUxOYURjSnY2QURJWjJzUHEtaG84WTVmTlNmTzI5U1pZU1FCUEtPQ3RXVHRQd0E4QXBpeE9rckpnUkZFOEVJSm9ZdFgzNFplNVFJWFNkUTV0dEVXTnVzcmwyZUx4TFFIV3NUWjhOSW9jWHFhRFd6aUNpLW1UcUo0ZXVHQ0RMaGFkSkZ4TGJ6YlU0OHRkdzZraFIzOA?oc=5) ⭐️ 7.0/10
+### [Seres Humanoid Robot Debuts at Super Factory](https://news.google.com/rss/articles/CBMickFVX3lxTE01U01pU1lVdnpNWV9TSzU3aVFJS21oYk5IZWFtbThnQzhoelEtR1VRMXU0bDZpczZGSk9ONEN6NVhNQVh5Q01iZVVzVEp2MFZLR3lBY2hjbmJjMy1VQXVJM1BjdkR5cDNwZ1NycWlVY191UQ?oc=5) ⭐️ 6.0/10
 
-Shenzhen has released an action plan outlining key strategies to become a global leader in embodied intelligence, with a focus on humanoid robots and related technologies. This policy signals strong government support for embodied AI, potentially accelerating industry development and positioning Shenzhen as a major player in the global humanoid robot market. The plan likely includes measures such as funding, talent attraction, and infrastructure development to foster innovation in embodied intelligence, though specific targets or timelines were not detailed in the snippet.
+Seres Group's humanoid robot, named 'Xiao Sai', has made its first public appearance at the Seres Super Factory and has begun internal trials for industrial and service applications. This marks a significant step for a Chinese EV maker expanding into embodied AI and humanoid robotics, potentially accelerating the adoption of humanoid robots in manufacturing and customer service. The robot features a white body with 'SERES' branding, supports AI detection and voice interaction, and Seres plans to launch multiple robots including bipedal, quadrupedal, and wheeled variants within the year.
 
-rss · 人形机器人与具身智能（中文） · Jun 20, 14:55
+rss · 人形机器人与具身智能（中文） · Jun 20, 16:39
 
-**Background**: Embodied intelligence refers to AI systems that achieve intelligent behavior through physical interaction with their environment, such as humanoid robots. Humanoid robots are considered a key future industry, with applications in manufacturing, healthcare, and services. Shenzhen, as a tech hub, aims to leverage its manufacturing ecosystem to lead in this field.
+**Background**: Seres Group is a Chinese electric vehicle manufacturer known for its AITO brand. The Seres Super Factory covers over 2700 mu (about 180 hectares) and houses more than 3000 robots for automotive production. Humanoid robots are general-purpose robots designed to mimic human form and movement, increasingly explored for industrial tasks.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://link.springer.com/chapter/10.1007/978-3-662-43505-2_37">Embodied Intelligence | Springer Nature Link</a></li>
-<li><a href="https://medium.com/@kosi.gramatikoff/humanoid-robots-with-chinese-characteristics-industrial-policy-and-technological-ambition-958a8177649b">Humanoid Robots with Chinese Characteristics: Industrial ... | Medium</a></li>
+<li><a href="https://finance.sina.com.cn/tech/digi/2025-11-04/doc-infwfpnt0457898.shtml">赛力斯人形机器人曝光，消息称其已现身用户中心|机器人|凤凰|人工智能_新浪科技_新浪网</a></li>
+<li><a href="https://news.17173.com/content/06152026/180508044.shtml">赛力斯人形机器人首次亮相，副总裁康波透露还有更多种类今年亮相_网络游戏新闻_17173.com中国游戏门户站</a></li>
+<li><a href="https://www.sina.cn/news/detail/5310117648011425.html">赛力斯人形机器人亮相_新浪新闻</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#policy`, `#Shenzhen`, `#embodied intelligence`, `#humanoid robots`, `#industry development`
+**Tags**: `#humanoid robot`, `#deployment`, `#Seres`, `#manufacturing`, `#China`
 
 ---
 
 <a id="item-8"></a>
-## [Humanoid Robot Startup Raises Hundreds of Millions, Claims World Model Breakthrough](https://news.google.com/rss/articles/CBMiU0FVX3lxTFBmdjljelNNSXo3bm5Ma2YzeFQ5TEF4aDlsUi1OYnN1c0U1b1NIbkFJOFg4QmFlbFkzd0tRWkFWSkctdDVMTjBTcmlsX0xJbmhWT1Vz?oc=5) ⭐️ 7.0/10
+### [Shanghai Claims Unique Half-Hour Supply Chain for Embodied AI](https://news.google.com/rss/articles/CBMiVkFVX3lxTFBtektMSDlXekFpSU1rSWs4UHZnbGxPS2tsLXF2YUZEdnpMSC1TUTh2OW80VnJSWXA4TkZWV005SDhaNURMYWZzZjFWMDJ5WUkxTTBJUHBB?oc=5) ⭐️ 6.0/10
 
-A humanoid robotics startup, referred to as a 'pragmatic dark horse' in embodied intelligence, secured hundreds of millions of RMB in funding across four rounds within its first year and achieved 300 million RMB in orders, claiming to have closed the loop on an embodied world model. This signals significant commercial traction and investor confidence in humanoid robotics, and the claimed embodied world model breakthrough could accelerate the deployment of robots capable of understanding and interacting with the physical world. The company achieved 300 million yuan in orders in its first year, indicating early market validation. The 'embodied world model' refers to a system that predicts real-world dynamics to enable planning and decision-making for embodied agents.
+Shanghai has announced a globally unique half-hour supply chain for embodied intelligence, claiming it can deliver components for humanoid robots within 30 minutes. The article also predicts that robots will achieve AI emergence by 2030. This supply chain speed could accelerate the development and deployment of humanoid robots, potentially giving Shanghai a competitive edge in the global embodied AI race. The 2030 prediction for AI emergence highlights ambitious expectations for robot autonomy. The half-hour supply chain is described as unique globally, but no specific companies or technical details are provided. The prediction of AI emergence by 2030 is speculative and lacks supporting evidence.
 
-rss · 人形机器人与具身智能（中文） · Jun 20, 04:30
+rss · 人形机器人与具身智能（中文） · Jun 20, 02:26
 
-**Background**: Embodied world models are AI systems that learn to simulate the effects of actions on the environment, enabling robots to plan and reason. They are considered a key step toward general-purpose robots that can operate in unstructured settings. The startup's rapid funding and orders suggest growing industry interest in commercializing such technology.
+**Background**: Embodied intelligence refers to AI systems embedded in physical bodies that perceive and act in the real world, such as humanoid robots. AI emergence is the hypothetical point at which AI systems achieve general intelligence or self-awareness, often compared to the technological singularity. Shanghai has been investing heavily in robotics and AI infrastructure to become a global leader.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://embodied-world-models.github.io/">Embodied World Models for Decision Making</a></li>
-<li><a href="https://arxiv.org/abs/2505.05495">[2505.05495] Learning 3D Persistent Embodied World Models</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Embodied_intelligence">Embodied intelligence</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#funding`, `#humanoid robot`, `#embodied AI`, `#commercial deployment`
+**Tags**: `#supply chain`, `#embodied intelligence`, `#humanoid robots`, `#China`, `#prediction`
 
 ---
 
 <a id="item-9"></a>
-## [Solving Long-Horizon Tasks in Embodied AI: Data Scaling vs. Hierarchical Control](https://news.google.com/rss/articles/CBMijAFBVV95cUxQcFd4bmhhLTFpU3hocGpVVWVoazVBYS1NSmYxUFFuUUJEX2lPTXNBbE84djROU2Y5OGlmbEFiUE5Ja3plMDhscXhBcXp2U0JSVHd2UU4yRi1xaDBtN2Rkd0ZjY0RHQ0ZHRnNpZm5zQUtIZEpSRG52TUNzS2RKTTJkTmtXSnlQN21EbkpFTg?oc=5) ⭐️ 7.0/10
+### [Solving Long-Horizon Tasks in Embodied AI: Data Scaling vs. Hierarchical Control](https://news.google.com/rss/articles/CBMijAFBVV95cUxQcFd4bmhhLTFpU3hocGpVVWVoazVBYS1NSmYxUFFuUUJEX2lPTXNBbE84djROU2Y5OGlmbEFiUE5Ja3plMDhscXhBcXp2U0JSVHd2UU4yRi1xaDBtN2Rkd0ZjY0RHQ0ZHRnNpZm5zQUtIZEpSRG52TUNzS2RKTTJkTmtXSnlQN21EbkpFTg?oc=5) ⭐️ 6.0/10
 
-A Sohu article explores the challenge of long-horizon tasks in embodied intelligence, comparing two competing approaches: brute-force data scaling and hierarchical control. The piece highlights the debate on whether more data or better architecture is key to enabling robots to perform complex, multi-step tasks. Long-horizon tasks are a core bottleneck in humanoid robotics and embodied AI, limiting real-world deployment. The outcome of this debate will shape research directions and investment in robot learning, affecting how soon robots can assist in homes, factories, and hospitals. Data scaling relies on massive datasets and compute to train end-to-end policies, while hierarchical control decomposes tasks into high-level planning and low-level execution. The article notes that current LLM-based task decomposition often fails in specific scenarios, suggesting a hybrid approach may be needed.
+An analysis piece from Sohu compares two competing approaches to solving long-horizon tasks in embodied intelligence: massive data scaling and hierarchical control architectures. Long-horizon tasks remain a critical bottleneck for deploying embodied AI in real-world applications like home service and manufacturing. Understanding the trade-offs between data-driven and structured control approaches can guide future research and investment. The article does not introduce new technical results but synthesizes existing debates. It likely references recent work on neural scaling laws for embodied AI and hierarchical control frameworks for robot manipulation.
 
 rss · 人形机器人与具身智能（中文） · Jun 20, 06:37
 
-**Background**: Embodied intelligence refers to AI systems that interact with the physical world through sensors and actuators, such as robots. Long-horizon tasks require a sequence of actions over extended time, demanding reasoning, memory, and adaptability. Hierarchical control splits the problem into planning and control layers, while data scaling aims to learn directly from large amounts of demonstration data.
+**Background**: Embodied intelligence aims to give robots the ability to perceive, reason, and act in complex environments. Long-horizon tasks require executing a sequence of actions over extended periods, which challenges current AI systems due to compounding errors and the need for robust planning. Data scaling advocates collect massive teleoperation datasets to train end-to-end models, while hierarchical control decomposes tasks into subgoals managed by different levels of abstraction.
 
 <details><summary>References</summary>
 <ul>
 <li><a href="https://onlinelibrary.wiley.com/doi/10.1155/int/5124400">An Overview of Robot Embodied Intelligence Based on Multimodal Models: Tasks, Models, and System Schemes - Cong - 2025 - International Journal of Intelligent Systems - Wiley Online Library</a></li>
-<li><a href="https://www.nature.com/articles/s42256-025-01005-x">Embodied large language models enable robots to complete complex tasks in unpredictable environments | Nature Machine Intelligence</a></li>
-<li><a href="https://arxiv.org/abs/2605.01772">[2605.01772] Anticipation-VLA: Solving Long-Horizon Embodied Tasks via Anticipation-based Subgoal Generation</a></li>
+<li><a href="https://arxiv.org/html/2405.14005v1">Neural Scaling Laws for Embodied AI - arXiv.org</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0736584523001412">A real-time hierarchical control method for safe human–robot ...</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#long-horizon tasks`, `#hierarchical control`, `#data scaling`, `#embodied AI`, `#humanoid robotics`
+**Tags**: `#embodied AI`, `#long-horizon tasks`, `#hierarchical control`, `#data scaling`
 
 ---
 
 <a id="item-10"></a>
-## [Hyundai's Atlas Robot Shows Pro-Level Soccer Moves](https://news.google.com/rss/articles/CBMimgFBVV95cUxPT3VwWURYQkhWXzNOVUtjODhKeUQtOEhwOElORG9VQk1ucHVsZW5Wc3Z5Z1gzRDd2Q2wwNnVJSFRWT1dKLXFud3V3MkZ6azRjQmhQR01kRURHOTNzUldqSDJCc2xobGNvU29uUllxUXdLV3RfUkVGWk16SmdieFctOWhSTGRLQlRFUk1yWXdwZmtKSGFoZWxYQ29B?oc=5) ⭐️ 7.0/10
+### [Hyundai's Atlas Robot Shows Off Soccer Skills](https://news.google.com/rss/articles/CBMimgFBVV95cUxPT3VwWURYQkhWXzNOVUtjODhKeUQtOEhwOElORG9VQk1ucHVsZW5Wc3Z5Z1gzRDd2Q2wwNnVJSFRWT1dKLXFud3V3MkZ6azRjQmhQR01kRURHOTNzUldqSDJCc2xobGNvU29uUllxUXdLV3RfUkVGWk16SmdieFctOWhSTGRLQlRFUk1yWXdwZmtKSGFoZWxYQ29B?oc=5) ⭐️ 6.0/10
 
-Hyundai's Atlas humanoid robot, developed by Boston Dynamics, has demonstrated advanced soccer moves including dribbling, passing, and shooting with impressive balance and agility. This achievement marks a significant milestone in dynamic locomotion and whole-body control for humanoid robots, bringing them closer to real-world applications in industrial automation and beyond. The Atlas robot uses hydraulic actuation and advanced control algorithms to perform complex maneuvers like pivoting, kicking, and recovering from off-balance positions, showcasing robust stability.
+Hyundai's Atlas humanoid robot, developed by Boston Dynamics, demonstrates advanced soccer moves in a new video featured by Autoblog. This showcases the rapid progress in humanoid robot agility and control, with potential applications in industrial automation and beyond. The Atlas robot performs complex soccer maneuvers such as dribbling and kicking, highlighting its balance and coordination capabilities.
 
 rss · Humanoid Robotics News · Jun 20, 15:15
 
-**Background**: Atlas is a bipedal hydraulic humanoid robot originally developed by Boston Dynamics with DARPA funding. It has evolved over the years to perform increasingly dynamic tasks such as parkour and dancing. Dynamic locomotion refers to a robot's ability to move with agility, speed, and balance, often in unpredictable environments.
+**Background**: Atlas is a humanoid robot originally developed by Boston Dynamics, which was acquired by Hyundai Motor Group in 2020. Hyundai plans to deploy Atlas in its Georgia manufacturing plant by 2028 for material handling tasks.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Atlas_(robot)">Atlas ( robot ) - Wikipedia</a></li>
 <li><a href="https://bostondynamics.com/products/atlas/">Atlas Humanoid Robot | Boston Dynamics</a></li>
-<li><a href="https://robotics.northwestern.edu/research/topics/dynamic-locomotion/index.html">Dynamic Locomotion: Center for Robotics and Biosystems - Northwestern University</a></li>
+<li><a href="https://www.linkedin.com/news/story/hyundai-to-use-humanoid-robots-in-georgia-plant-by-2028-7359537/">Hyundai to use humanoid robots in Georgia plant by 2028 | LinkedIn</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#Atlas`, `#Hyundai`, `#dynamic locomotion`, `#humanoid`, `#agility`
+**Tags**: `#humanoid robot`, `#Hyundai`, `#Atlas`, `#locomotion`, `#soccer`
+
+---
+
+<a id="item-11"></a>
+### [How Sound Design Gave Amazon's Astro a Soul](https://spectrum.ieee.org/amazon-astro-robot-sound) ⭐️ 5.0/10
+
+Amazon's lead UX sound designer for Astro reveals how they shaped the robot's character through sound, motion, and facial expressions, deliberately distinguishing it from Alexa to create a unique personality. This case study highlights the critical role of character design in consumer robotics, showing that sound and personality are as important as hardware for user acceptance and trust. The team chose to give Astro its own character rather than treat it as Alexa on wheels, using non-verbal sounds and motions to communicate emotions like happiness, uncertainty, and playfulness.
+
+rss · IEEE Spectrum Robotics · Jun 19, 10:00
+
+**Background**: Amazon Astro is a home robot designed for security monitoring, remote care, and item transport. It uses cameras and sensors to navigate homes. Sound design for robots involves creating auditory cues that convey intent and emotion, improving human-robot interaction.
+
+<details><summary>References</summary>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Amazon_Astro">Amazon Astro - Wikipedia</a></li>
+<li><a href="https://www.reddit.com/r/technology/comments/1dwnrrp/amazon_is_bricking_2350_astro_robots_10_months/">Amazon is bricking $2350 Astro robots 10 months after release ... - Reddit</a></li>
+
+</ul>
+</details>
+
+**Discussion**: Reddit discussions note that Amazon is bricking Astro robots for business use, refunding customers, and focusing on the home version. Some users express disappointment over the short lifespan and limited functionality.
+
+**Tags**: `#robot sound design`, `#Amazon Astro`, `#human-robot interaction`, `#consumer robotics`
+
+---
+
+## Deep Interviews / Podcasts
+
+<a id="item-12"></a>
+### [Generalist's $400M Bet on Dexterous Robots for Physical AI](https://www.youtube.com/watch?v=-TTAOxVN2eo) ⭐️ 7.0/10
+
+Generalist, a robotics startup, has raised $400 million to develop dexterous robots that can manipulate objects in the real world, as discussed by CTO Andrew Barry in a recent interview. The company is building its own data capture devices and training models on real-world manipulation tasks. Dexterous manipulation remains one of the hardest problems in robotics, and solving it could unlock a wide range of real-world automation. Generalist's focus on data collection and model-based intelligence may accelerate progress toward general physical intelligence. Generalist uses data gloves for data collection, which differs from teleoperation, and trains models on tasks that customers are already paying for. The company observed that robots can sometimes complete tasks in ways they were never directly taught, indicating emergent improvisational intelligence.
+
+youtube · Automated Podcast · Jun 10, 10:00 · 45 min · 7,947 views
+
+**Summary basis**: video or episode description only
+
+**Background**: Dexterous manipulation refers to a robot's ability to skillfully control and manipulate objects using multi-fingered hands, similar to human dexterity. It is a key challenge in physical AI, which aims to give robots general intelligence for interacting with the physical world. Generalist is a frontier AI research and product company building general-purpose robots.
+
+<details><summary>References</summary>
+<ul>
+<li><a href="https://generalistai.com/">At Generalist , we are on a mission to make general-purpose robots ...</a></li>
+<li><a href="https://www.linkedin.com/company/generalistai">Generalist | LinkedIn</a></li>
+
+</ul>
+</details>
+
+**Tags**: `#dexterity`, `#manipulation`, `#Generalist`, `#physical AI`, `#data capture`
+
+---
+
+<a id="item-13"></a>
+### [QNX: Deterministic Real-Time Systems Critical for Humanoid Robots](https://soundcloud.com/robot-report-podcast/deterministic-systems) ⭐️ 7.0/10
+
+Winston Leung from QNX explains that the company's deterministic microkernel architecture is essential for safety and real-time control in humanoid and physical AI robots, supported by partnerships with NVIDIA and Intel. As humanoid robots enter human environments, deterministic real-time systems ensure predictable behavior, preventing accidents and enabling safe deployment. This positions QNX as a key enabler for the next generation of physical AI robots. QNX's microkernel isolates drivers, filesystems, and applications in separate memory spaces, providing fault tolerance and security. The company also integrates cybersecurity with functional safety standards to protect robots operating near humans.
+
+rss · The Robot Report Podcast · Jun 5, 18:16 · 45 min
+
+**Summary basis**: video or episode description only
+
+**Background**: A deterministic real-time system guarantees bounded response times to events, which is critical for safety-critical applications like robotics. QNX is a hard real-time operating system (RTOS) that uses a microkernel architecture, unlike monolithic kernels, to provide memory protection and fault isolation. Functional safety ensures that systems behave safely even when faults occur, which is essential for robots operating in human environments.
+
+<details><summary>References</summary>
+<ul>
+<li><a href="https://www.qnx.com/developers/docs/7.0.0/com.qnx.doc.neutrino.sys_arch/topic/intro_MICROKERNELARCH.html">Microkernel architecture - QNX</a></li>
+<li><a href="https://www.intervalzero.com/understanding-hard-real-time-determinism/">Understanding Hard Real - time Determinism - IntervalZero</a></li>
+<li><a href="https://www.eeworldonline.com/designing-for-functional-safety-in-robotics-key-considerations-for-engineers/">Functional Safety in Collaborative Robotics Explained - Electrical Engineering News and Products</a></li>
+
+</ul>
+</details>
+
+**Tags**: `#real-time systems`, `#safety`, `#QNX`, `#humanoid robotics`, `#functional safety`
+
+---
+
+<a id="item-14"></a>
+### [Open Source Embodied AI with Seeed Studio](https://feeds.megaphone.fm/nvidiaaipodcast) ⭐️ 7.0/10
+
+Seeed Studio CEO Eric Pan and Head of Robotics Elaine Wu discussed on the NVIDIA AI Podcast how open-source hardware, the OpenClaw agentic framework, and NVIDIA Isaac Sim are making robot arms affordable and teachable for everyone. This democratizes embodied AI, enabling makers, students, and small businesses to build and train robots without expensive proprietary systems, accelerating innovation in physical AI. The $200 SOR arm, developed with Hugging Face, lowers the barrier to entry, and the OpenClaw framework on NVIDIA Jetson allows natural-language commands to control robots, while Isaac Sim provides simulation for training.
+
+rss · NVIDIA AI Podcast · May 27, 15:45 · 29 min
+
+**Summary basis**: video or episode description only
+
+**Background**: Embodied AI refers to AI integrated into physical systems that can perceive and act in the real world. Open-source robotics aims to make hardware and software freely available, lowering costs and fostering collaboration. NVIDIA Isaac Sim is a simulation platform for training robots in virtual environments before real-world deployment.
+
+<details><summary>References</summary>
+<ul>
+<li><a href="https://docs.openclaw.ai/">OpenClaw is a multi-channel gateway for AI agents that runs on any OS.</a></li>
+<li><a href="https://developer.nvidia.com/isaac/sim">NVIDIA Isaac Sim</a></li>
+<li><a href="https://www.nvidia.com/en-us/glossary/embodied-ai/">Embodied AI: What Is It and How to Build It?</a></li>
+
+</ul>
+</details>
+
+**Tags**: `#open source`, `#embodied AI`, `#robot arms`, `#NVIDIA Jetson`, `#simulation`
 
 ---
