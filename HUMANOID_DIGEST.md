@@ -11,9 +11,10 @@
 - 模型：DeepSeek `deepseek-chat`
 - Secret：仓库 Actions Secret `DEEPSEEK_API_KEY`
 - YouTube Secret：仓库 Actions Secret `YOUTUBE_API_KEY`
-- 检索窗口：最近 48 小时
+- 新闻检索窗口：最近 48 小时
+- 深度访谈检索窗口：最近 30 天
 - 输出语言：简体中文和英文
-- 最终上限：15 条
+- 新闻上限：15 条；深度访谈/Podcast 另设上限 3 条
 - 发布分支：`gh-pages`
 
 ## 配置入口
@@ -23,6 +24,7 @@
 | `data/config.github.json` | GitHub Actions 使用的数据源、模型、语言、阈值与来源配额 |
 | `.github/workflows/daily-summary.yml` | 定时任务、Secret 映射、运行窗口与 Pages 发布 |
 | `src/ai/prompts.py` | `CONTENT_ANALYSIS_SYSTEM` 中的人形机器人相关性硬门槛 |
+| `src/scrapers/youtube.py` | YouTube 官方搜索、播放量/时长过滤、字幕抽样与降级逻辑 |
 | `scripts/check_youtube_api.py` | 用一次最小长视频检索验证 YouTube Key 与 API 限制，不输出 Key |
 | `docs/` | GitHub Pages 模板；生成的文章会发布到 `docs/_posts/` |
 
@@ -81,13 +83,51 @@ Google News 中文 Feed：
 
 中文 Feed 的分类为 `humanoid-zh`；英文 RSS/Atom Feed 的分类为 `humanoid-en`。
 
+## 深度访谈 / Podcast
+
+深度内容与快讯显示在同一篇日报，但使用独立区块和独立的 3 条上限，不占用 15 条新闻名额。
+
+### YouTube 检索词
+
+```text
+"humanoid robot" interview
+"humanoid robotics" podcast
+"embodied AI" interview robotics
+"bipedal robot" talk
+"robot foundation model" interview
+"dexterous manipulation" podcast
+人形机器人 访谈
+具身智能 深度对话
+双足机器人 访谈
+灵巧手 访谈
+```
+
+YouTube 规则：
+
+- 最近 30 天、时长 20–180 分钟。
+- 总播放量至少 2,000，或日均播放量至少 200。
+- 每个检索词最多读取 8 条，去重后最多送 12 条给 AI，最终最多保留 3 条。
+- 排序先看 AI 相关性和内容质量，再以日均播放增速、总播放量打破同分。
+- 尽可能抽取公开视频字幕，并在整段时间线上均匀取样，而不是只看开头。
+- GitHub 托管 Runner 可能被 YouTube 字幕端点限制；失败时只根据视频简介摘要，并在页面明确标注“仅视频或节目简介”。
+- YouTube Key 通过 `X-Goog-Api-Key` 请求头发送，避免出现在异常 URL 和日志中。
+
+### Podcast RSS
+
+- The Robot Report Podcast
+- The Robot Brains Podcast
+- Lex Fridman Podcast
+- NVIDIA AI Podcast
+
+Podcast 使用 30 天窗口，并先按人形机器人、具身智能、双足、灵巧操作、VLA 和主要人形机器人公司关键词预过滤。Podcast RSS 通常不公开真实播放量，因此不声称按播放量排名；若无公开字幕，摘要只基于节目简介。
+
 ## 筛选和配额语义
 
 - AI 相关性阈值：5.0。
 - 中文来源组上限：8 条。
 - 英文来源组上限：8 条。
 - GitHub/OSSInsight 等未带 RSS 分类的开源来源上限：4 条。
-- 全局最终上限：15 条。
+- 新闻全局上限：15 条；长访谈/Podcast 独立上限：3 条。
 - 这些数值是上限，不是保底数量；没有足够的高相关英文内容时，不会用低质量内容凑数。
 - 同一事件的中英文报道会进行语义去重，因此最终来源数量不等于抓取数量。
 - 中文日报会把英文内容翻译成中文标题和摘要；来源行仍显示英文 Feed 名称。
@@ -113,6 +153,7 @@ AI 评分优先保留：
 5. 推送 `main` 后，手动运行 `Daily Horizon Summary`。
 6. 确认 `Run Horizon` 和 `Deploy to GitHub Pages` 均成功。
 7. 验证中文、英文文章均生成，并统计实际来源分布与主题相关性。
+8. 检查“深度访谈 / Podcast”区块是否显示时长、播放量和摘要依据；没有字幕时不得把简介摘要描述成完整访谈摘要。
 
 ## 给后续维护者
 

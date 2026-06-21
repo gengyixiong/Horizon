@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+from datetime import datetime, timedelta, timezone
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -31,12 +32,18 @@ def main() -> int:
         "type": "video",
         "videoDuration": "long",
         "order": "viewCount",
+        "publishedAfter": (
+            datetime.now(timezone.utc) - timedelta(days=30)
+        ).isoformat().replace("+00:00", "Z"),
         "maxResults": 1,
-        "key": api_key,
     }
     request = Request(
         f"{API_URL}?{urlencode(params)}",
-        headers={"Accept": "application/json", "User-Agent": "Horizon/1.0"},
+        headers={
+            "Accept": "application/json",
+            "User-Agent": "Horizon/1.0",
+            "X-Goog-Api-Key": api_key,
+        },
     )
 
     try:

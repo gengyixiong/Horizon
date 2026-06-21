@@ -116,6 +116,10 @@ class ContentAnalyzer:
             engagement_items.append(f"{meta['reply_count']} replies")
         if meta.get("views"):
             engagement_items.append(f"{meta['views']} views")
+        if meta.get("likes"):
+            engagement_items.append(f"{meta['likes']} likes")
+        if meta.get("comments"):
+            engagement_items.append(f"{meta['comments']} comments")
         if meta.get("bookmarks"):
             engagement_items.append(f"{meta['bookmarks']} bookmarks")
         if meta.get("upvote_ratio"):

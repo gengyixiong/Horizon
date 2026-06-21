@@ -25,7 +25,21 @@ LABELS = {
         "discussion": "Discussion",
         "references": "References",
         "tags": "Tags",
+        "navigation": "Contents",
+        "news_section": "Humanoid Robotics News",
+        "news_empty": "No news item passed the relevance and quality filters.",
+        "long_form_section": "Deep Interviews / Podcasts",
+        "long_form_empty": "No new high-quality long-form interview passed the filters.",
         "selected_items": "From {total} items, {selected} important content pieces were selected",
+        "selected_grouped": (
+            "From {total} candidates, selected {news} news items and "
+            "{long_form} deep interviews/podcasts"
+        ),
+        "minutes": "{value} min",
+        "views": "{value:,} views",
+        "summary_basis": "Summary basis",
+        "basis_transcript": "public transcript samples",
+        "basis_description": "video or episode description only",
         "empty_analyzed": "Analyzed {total} items, but none met the importance threshold.",
         "empty_body": (
             "No significant developments today. This might indicate:\n"
@@ -45,7 +59,21 @@ LABELS = {
         "discussion": "社区讨论",
         "references": "参考链接",
         "tags": "标签",
+        "navigation": "内容导航",
+        "news_section": "今日人形机器人新闻",
+        "news_empty": "本期没有通过相关性和质量筛选的新闻。",
+        "long_form_section": "深度访谈 / Podcast",
+        "long_form_empty": "本期没有通过筛选的高质量长访谈。",
         "selected_items": "从 {total} 条内容中筛选出 {selected} 条重要资讯。",
+        "selected_grouped": (
+            "从 {total} 条候选内容中筛选出 {news} 条新闻和 "
+            "{long_form} 条深度访谈/Podcast。"
+        ),
+        "minutes": "{value} 分钟",
+        "views": "{value:,} 次播放",
+        "summary_basis": "摘要依据",
+        "basis_transcript": "公开字幕片段",
+        "basis_description": "仅视频或节目简介",
         "empty_analyzed": "已分析 {total} 条内容，但没有达到重要性阈值的条目。",
         "empty_body": (
             "今日暂无重要动态，可能原因：\n"
@@ -92,26 +120,69 @@ class DailySummarizer:
         if not items:
             return self._generate_empty_summary(date, total_fetched, labels)
 
+        news_items = [item for item in items if not self._is_long_form(item)]
+        long_form_items = [item for item in items if self._is_long_form(item)]
         header = (
             f"# {labels['header']} - {date}\n\n"
-            f"> {labels['selected_items'].format(total=total_fetched, selected=len(items))}\n\n"
+            f"> {labels['selected_grouped'].format(total=total_fetched, news=len(news_items), long_form=len(long_form_items))}\n\n"
             "---\n\n"
         )
 
-        # TOC
-        toc_entries = []
-        for i, item in enumerate(items):
-            _t = item.metadata.get(f"title_{language}") or item.title
-            t = str(_t).replace("[", "(").replace("]", ")")
-            if language == "zh":
-                t = _pangu(t)
-            score = item.ai_score or "?"
-            toc_entries.append(f"{i + 1}. [{t}](#item-{i + 1}) \u2b50\ufe0f {score}/10")
-        toc = "\n".join(toc_entries) + "\n\n---\n\n"
+        # Grouped navigation keeps long interviews visible without mixing them
+        # into the fast-news ranking.
+        toc_parts = [f"## {labels['navigation']}\n"]
+        next_index = 1
+        for section_label, section_items, empty_label in (
+            (labels["news_section"], news_items, labels["news_empty"]),
+            (
+                labels["long_form_section"],
+                long_form_items,
+                labels["long_form_empty"],
+            ),
+        ):
+            toc_parts.append(f"### {section_label}\n")
+            if not section_items:
+                toc_parts.append(f"- *{empty_label}*\n")
+                continue
+            for item in section_items:
+                title = item.metadata.get(f"title_{language}") or item.title
+                title = str(title).replace("[", "(").replace("]", ")")
+                if language == "zh":
+                    title = _pangu(title)
+                score = item.ai_score or "?"
+                toc_parts.append(
+                    f"{next_index}. [{title}](#item-{next_index}) \u2b50\ufe0f {score}/10"
+                )
+                next_index += 1
+            toc_parts.append("")
+        toc = "\n".join(toc_parts).rstrip() + "\n\n---\n\n"
 
-        parts = [self._format_item(item, labels, language, i + 1) for i, item in enumerate(items)]
+        body_parts = [f"## {labels['news_section']}\n\n"]
+        item_index = 1
+        if news_items:
+            for item in news_items:
+                body_parts.append(
+                    self._format_item(
+                        item, labels, language, item_index, heading_level=3
+                    )
+                )
+                item_index += 1
+        else:
+            body_parts.append(f"*{labels['news_empty']}*\n\n")
 
-        return header + toc + "".join(parts)
+        body_parts.append(f"## {labels['long_form_section']}\n\n")
+        if long_form_items:
+            for item in long_form_items:
+                body_parts.append(
+                    self._format_item(
+                        item, labels, language, item_index, heading_level=3
+                    )
+                )
+                item_index += 1
+        else:
+            body_parts.append(f"*{labels['long_form_empty']}*\n")
+
+        return header + toc + "".join(body_parts)
 
     def generate_webhook_overview(
         self,
@@ -160,7 +231,14 @@ class DailySummarizer:
         prefix = f"第 {index}/{total} 条\n\n" if language == "zh" else f"Item {index}/{total}\n\n"
         return prefix + self._format_item(item, labels, language, index).rstrip("-\n ")
 
-    def _format_item(self, item: ContentItem, labels: dict, language: str, index: int) -> str:
+    def _format_item(
+        self,
+        item: ContentItem,
+        labels: dict,
+        language: str,
+        index: int,
+        heading_level: int = 2,
+    ) -> str:
         """Format a single ContentItem into Markdown."""
         _title = item.metadata.get(f"title_{language}") or item.title
         title = str(_title).replace("[", "(").replace("]", ")")
@@ -205,6 +283,12 @@ class DailySummarizer:
             else:
                 day = item.published_at.strftime("%d").lstrip("0")
                 source_parts.append(item.published_at.strftime(f"%b {day}, %H:%M"))
+        if meta.get("duration_minutes"):
+            source_parts.append(
+                labels["minutes"].format(value=meta["duration_minutes"])
+            )
+        if meta.get("views") is not None:
+            source_parts.append(labels["views"].format(value=int(meta["views"])))
         source_line = " \u00b7 ".join(source_parts)  # ·
 
         discussion_url = meta.get("discussion_url")
@@ -215,12 +299,23 @@ class DailySummarizer:
 
         lines = [
             f'<a id="item-{index}"></a>',
-            f"## [{title}]({url}) \u2b50\ufe0f {score}/10",  # ⭐️
+            f"{'#' * heading_level} [{title}]({url}) \u2b50\ufe0f {score}/10",  # ⭐️
             "",
             summary,
             "",
             source_line,
         ]
+
+        summary_basis = meta.get("summary_basis")
+        if summary_basis:
+            basis_key = (
+                "basis_transcript"
+                if summary_basis == "transcript"
+                else "basis_description"
+            )
+            lines.extend(
+                ["", f"**{labels['summary_basis']}**: {labels[basis_key]}"]
+            )
 
         if background:
             lines.append("")
@@ -247,6 +342,13 @@ class DailySummarizer:
         lines.append("---")
 
         return "\n".join(lines) + "\n\n"
+
+    @staticmethod
+    def _is_long_form(item: ContentItem) -> bool:
+        return (
+            item.source_type.value == "youtube"
+            or item.metadata.get("category") == "long-form"
+        )
 
     def _generate_empty_summary(self, date: str, total_fetched: int, labels: dict) -> str:
         """Generate summary when no high-scoring items were found."""

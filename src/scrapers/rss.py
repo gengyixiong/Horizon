@@ -5,7 +5,7 @@ import hashlib
 import logging
 import os
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import List
 from email.utils import parsedate_to_datetime
 import httpx
@@ -45,7 +45,14 @@ class RSSScraper(BaseScraper):
             if not source.enabled:
                 continue
 
-            feed_items = await self._fetch_feed(source, since)
+            source_since = since
+            if source.lookback_days:
+                source_since = min(
+                    since,
+                    datetime.now(timezone.utc) - timedelta(days=source.lookback_days),
+                )
+
+            feed_items = await self._fetch_feed(source, source_since)
             items.extend(feed_items)
 
         return items
@@ -94,20 +101,35 @@ class RSSScraper(BaseScraper):
 
                 # Extract content
                 content = self._extract_content(entry)
+                title = entry.get("title", "Untitled")
+
+                # Curated podcast feeds can still cover broad topics. Apply a
+                # cheap title/description filter before spending AI tokens.
+                if source.keywords:
+                    haystack = f"{title}\n{content}".lower()
+                    if not any(keyword.lower() in haystack for keyword in source.keywords):
+                        continue
+
+                duration_minutes = self._parse_duration_minutes(entry)
+                metadata = {
+                    "feed_name": source.name,
+                    "category": source.category,
+                    "tags": [tag.term for tag in entry.get("tags", [])],
+                }
+                if duration_minutes:
+                    metadata["duration_minutes"] = duration_minutes
+                if source.category == "long-form":
+                    metadata["summary_basis"] = "description"
 
                 item = ContentItem(
                     id=self._generate_id("rss", feed_id, entry_hash),
                     source_type=SourceType.RSS,
-                    title=entry.get("title", "Untitled"),
+                    title=title,
                     url=entry.get("link", str(source.url)),
                     content=content,
                     author=entry.get("author", source.name),
                     published_at=published_at,
-                    metadata={
-                        "feed_name": source.name,
-                        "category": source.category,
-                        "tags": [tag.term for tag in entry.get("tags", [])],
-                    },
+                    metadata=metadata,
                 )
                 items.append(item)
 
@@ -163,3 +185,26 @@ class RSSScraper(BaseScraper):
             return entry.content[0].get("value", "")
 
         return ""
+
+    @staticmethod
+    def _parse_duration_minutes(entry: dict) -> int | None:
+        """Parse common iTunes duration formats used by podcast RSS feeds."""
+        raw = entry.get("itunes_duration") or entry.get("duration")
+        if raw is None:
+            return None
+        value = str(raw).strip()
+        if not value:
+            return None
+        try:
+            if ":" not in value:
+                return max(1, round(float(value) / 60))
+            parts = [int(part) for part in value.split(":")]
+            if len(parts) == 3:
+                seconds = parts[0] * 3600 + parts[1] * 60 + parts[2]
+            elif len(parts) == 2:
+                seconds = parts[0] * 60 + parts[1]
+            else:
+                return None
+            return max(1, round(seconds / 60))
+        except (TypeError, ValueError):
+            return None

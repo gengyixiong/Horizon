@@ -78,8 +78,66 @@
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22humanoid%20robot%22%20OR%20all%3A%22bipedal%20locomotion%22%20OR%20all%3A%22whole-body%20control%22&start=0&max_results=30&sortBy=submittedDate&sortOrder=descending",
         "enabled": true,
         "category": "humanoid-en"
+      },
+      {
+        "name": "The Robot Report Podcast",
+        "url": "https://feeds.soundcloud.com/users/soundcloud:users:830627836/sounds.rss",
+        "enabled": true,
+        "category": "long-form",
+        "lookback_days": 30,
+        "keywords": ["humanoid", "robot", "robotics", "embodied", "bipedal", "locomotion", "dexterous", "manipulation", "physical AI", "VLA", "Boston Dynamics", "Figure AI", "Agility Robotics", "Apptronik", "Unitree", "Optimus", "1X", "Sanctuary AI"]
+      },
+      {
+        "name": "The Robot Brains Podcast",
+        "url": "https://feeds.acast.com/public/shows/the-robot-brains",
+        "enabled": true,
+        "category": "long-form",
+        "lookback_days": 30,
+        "keywords": ["humanoid", "robot", "robotics", "embodied", "bipedal", "locomotion", "dexterous", "manipulation", "physical AI", "VLA", "Boston Dynamics", "Figure AI", "Agility Robotics", "Apptronik", "Unitree", "Optimus", "1X", "Sanctuary AI"]
+      },
+      {
+        "name": "Lex Fridman Podcast",
+        "url": "https://lexfridman.com/feed/podcast/",
+        "enabled": true,
+        "category": "long-form",
+        "lookback_days": 30,
+        "keywords": ["humanoid", "robot", "robotics", "embodied", "bipedal", "locomotion", "dexterous", "manipulation", "physical AI", "VLA", "Boston Dynamics", "Figure AI", "Agility Robotics", "Apptronik", "Unitree", "Optimus", "1X", "Sanctuary AI"]
+      },
+      {
+        "name": "NVIDIA AI Podcast",
+        "url": "https://feeds.megaphone.fm/nvidiaaipodcast",
+        "enabled": true,
+        "category": "long-form",
+        "lookback_days": 30,
+        "keywords": ["humanoid", "robot", "robotics", "embodied", "bipedal", "locomotion", "dexterous", "manipulation", "physical AI", "VLA", "Boston Dynamics", "Figure AI", "Agility Robotics", "Apptronik", "Unitree", "Optimus", "1X", "Sanctuary AI"]
       }
     ],
+    "youtube": {
+      "enabled": true,
+      "api_key_env": "YOUTUBE_API_KEY",
+      "queries": [
+        "\"humanoid robot\" interview",
+        "\"humanoid robotics\" podcast",
+        "\"embodied AI\" interview robotics",
+        "\"bipedal robot\" talk",
+        "\"robot foundation model\" interview",
+        "\"dexterous manipulation\" podcast",
+        "人形机器人 访谈",
+        "具身智能 深度对话",
+        "双足机器人 访谈",
+        "灵巧手 访谈"
+      ],
+      "lookback_days": 30,
+      "max_results_per_query": 8,
+      "min_duration_minutes": 20,
+      "max_duration_minutes": 180,
+      "min_views": 2000,
+      "min_views_per_day": 200,
+      "max_candidates": 12,
+      "max_items": 3,
+      "transcript_languages": ["en", "en-US", "zh-Hans", "zh-CN", "zh"],
+      "category": "long-form"
+    },
     "reddit": {
       "enabled": false,
       "subreddits": [

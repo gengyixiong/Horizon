@@ -15,6 +15,7 @@ class SourceType(str, Enum):
     REDDIT = "reddit"
     TELEGRAM = "telegram"
     TWITTER = "twitter"
+    YOUTUBE = "youtube"
     OPENBB = "openbb"
     OSSINSIGHT = "ossinsight"
 
@@ -138,6 +139,30 @@ class RSSSourceConfig(BaseModel):
     url: HttpUrl
     enabled: bool = True
     category: Optional[str] = None
+    # Per-feed override for slower long-form sources such as podcasts.
+    lookback_days: Optional[int] = Field(default=None, ge=1, le=365)
+    # Optional pre-AI substring filter against title and description.
+    keywords: List[str] = Field(default_factory=list)
+
+
+class YouTubeConfig(BaseModel):
+    """Configuration for popular long-form YouTube interviews and podcasts."""
+
+    enabled: bool = False
+    api_key_env: str = "YOUTUBE_API_KEY"
+    queries: List[str] = Field(default_factory=list)
+    lookback_days: int = Field(default=30, ge=1, le=365)
+    max_results_per_query: int = Field(default=8, ge=1, le=50)
+    min_duration_minutes: int = Field(default=20, ge=1)
+    max_duration_minutes: int = Field(default=180, ge=1)
+    min_views: int = Field(default=2000, ge=0)
+    min_views_per_day: float = Field(default=200.0, ge=0)
+    max_candidates: int = Field(default=12, ge=1, le=50)
+    max_items: int = Field(default=3, ge=1, le=10)
+    transcript_languages: List[str] = Field(
+        default_factory=lambda: ["en", "en-US", "zh-Hans", "zh-CN", "zh"]
+    )
+    category: str = "long-form"
 
 
 class RedditSubredditConfig(BaseModel):
@@ -270,6 +295,7 @@ class SourcesConfig(BaseModel):
     github: List[GitHubSourceConfig] = Field(default_factory=list)
     hackernews: HackerNewsConfig = Field(default_factory=HackerNewsConfig)
     rss: List[RSSSourceConfig] = Field(default_factory=list)
+    youtube: Optional[YouTubeConfig] = None
     reddit: RedditConfig = Field(default_factory=RedditConfig)
     telegram: TelegramConfig = Field(default_factory=TelegramConfig)
     twitter: Optional[TwitterConfig] = None

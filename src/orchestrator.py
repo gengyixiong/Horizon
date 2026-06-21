@@ -16,6 +16,7 @@ from .services.webhook import WebhookNotifier
 from .scrapers.github import GitHubScraper
 from .scrapers.hackernews import HackerNewsScraper
 from .scrapers.rss import RSSScraper
+from .scrapers.youtube import YouTubeScraper
 from .scrapers.reddit import RedditScraper
 from .scrapers.telegram import TelegramScraper
 from .scrapers.twitter import TwitterScraper
@@ -115,21 +116,57 @@ class HorizonOrchestrator:
                 f"⭐️ {len(important_items)} items scored ≥ {threshold}\n"
             )
 
-            # 5.5 Semantic deduplication: drop items covering the same topic
-            deduped_items = await self.merge_topic_duplicates(important_items)
-            if len(deduped_items) < len(important_items):
+            # Keep long-form interviews separate from fast news. They use an
+            # independent cap and are rendered in their own page section.
+            news_items = [
+                item for item in important_items if not self._is_long_form(item)
+            ]
+            long_form_items = [
+                item for item in important_items if self._is_long_form(item)
+            ]
+
+            # 5.5 Semantic deduplication within each content lane. Do not let a
+            # breaking-news article remove a deeper interview on the same topic.
+            deduped_news = await self.merge_topic_duplicates(news_items)
+            deduped_long_form = await self.merge_topic_duplicates(long_form_items)
+            removed_duplicates = (
+                len(news_items) + len(long_form_items)
+                - len(deduped_news) - len(deduped_long_form)
+            )
+            if removed_duplicates:
                 self.console.print(
-                    f"🧹 Removed {len(important_items) - len(deduped_items)} topic duplicates "
-                    f"→ {len(deduped_items)} unique items\n"
+                    f"🧹 Removed {removed_duplicates} topic duplicates "
+                    f"→ {len(deduped_news) + len(deduped_long_form)} unique items\n"
                 )
-            important_items = deduped_items
+            news_items = deduped_news
+            long_form_items = deduped_long_form
 
             # 5.6 Optional second-stage Twitter reply expansion + targeted re-analysis
-            await self._expand_twitter_discussion(important_items)
+            await self._expand_twitter_discussion(news_items)
 
-            # 5.7 Apply per-category and global digest limits before enrichment
-            balanced_result = self.apply_balanced_digest(important_items)
-            important_items = balanced_result.items
+            # 5.7 Apply the 15-item news cap independently from the long-form
+            # cap. Popularity velocity breaks AI-score ties for interviews.
+            balanced_result = self.apply_balanced_digest(news_items)
+            news_items = balanced_result.items
+            long_form_items.sort(
+                key=lambda item: (
+                    item.ai_score or 0,
+                    float(item.metadata.get("views_per_day") or 0),
+                    int(item.metadata.get("views") or 0),
+                ),
+                reverse=True,
+            )
+            long_form_limit = (
+                self.config.sources.youtube.max_items
+                if self.config.sources.youtube
+                else 3
+            )
+            long_form_items = long_form_items[:long_form_limit]
+            self.console.print(
+                f"🎧 Selected {len(long_form_items)} long-form interviews/podcasts "
+                f"(limit {long_form_limit})\n"
+            )
+            important_items = news_items + long_form_items
 
             # Show per-sub-source selection breakdown
             selected_counts: Dict[str, int] = defaultdict(int)
@@ -271,6 +308,13 @@ class HorizonOrchestrator:
                 rss_scraper = RSSScraper(self.config.sources.rss, client)
                 tasks.append(self._fetch_with_progress("RSS Feeds", rss_scraper, since))
 
+            # Popular long-form YouTube interviews and podcast videos
+            if self.config.sources.youtube and self.config.sources.youtube.enabled:
+                youtube_scraper = YouTubeScraper(self.config.sources.youtube, client)
+                tasks.append(
+                    self._fetch_with_progress("YouTube Long-form", youtube_scraper, since)
+                )
+
             # Reddit
             if self.config.sources.reddit.enabled:
                 reddit_scraper = RedditScraper(self.config.sources.reddit, client)
@@ -337,6 +381,14 @@ class HorizonOrchestrator:
                 self.console.print(f"      • {sub}: {count}")
 
         return items
+
+    @staticmethod
+    def _is_long_form(item: ContentItem) -> bool:
+        """Return whether an item belongs in the deep interview/podcast lane."""
+        return (
+            item.source_type.value == "youtube"
+            or item.metadata.get("category") == "long-form"
+        )
 
     @staticmethod
     def _sub_source_label(item: ContentItem) -> str:

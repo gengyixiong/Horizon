@@ -118,7 +118,7 @@ def test_generate_summary_zh_uses_localized_selection_header_and_numeric_date():
         )
     )
 
-    assert "> 从 10 条内容中筛选出 1 条重要资讯。" in result
+    assert "> 从 10 条候选内容中筛选出 1 条新闻和 0 条深度访谈/Podcast。" in result
     assert "rss · tester · 4月25日 08:00" in result
     assert "From 10 items" not in result
     assert "Apr 25, 08:00" not in result
@@ -138,3 +138,39 @@ def test_generate_empty_summary_zh_uses_localized_analyzed_line():
 
     assert "> 已分析 10 条内容，但没有达到重要性阈值的条目。" in result
     assert "Analyzed 10 items" not in result
+
+
+def test_generate_summary_separates_youtube_long_form_metadata():
+    summarizer = DailySummarizer()
+    news = _make_item(1)
+    interview = ContentItem(
+        id="youtube:video:abc",
+        source_type=SourceType.YOUTUBE,
+        title="Humanoid Robot Founder Interview",
+        url="https://www.youtube.com/watch?v=abc",
+        author="Robotics Channel",
+        published_at=datetime(2026, 4, 25, 9, 0, tzinfo=timezone.utc),
+        ai_score=8.0,
+        ai_summary="A detailed conversation about humanoid deployment.",
+        metadata={
+            "category": "long-form",
+            "duration_minutes": 65,
+            "views": 120000,
+            "summary_basis": "transcript",
+        },
+    )
+
+    result = _run_async(
+        summarizer.generate_summary(
+            [news, interview],
+            date="2026-04-25",
+            total_fetched=20,
+            language="zh",
+        )
+    )
+
+    assert "## 今日人形机器人新闻" in result
+    assert "## 深度访谈 / Podcast" in result
+    assert "65 分钟" in result
+    assert "120,000 次播放" in result
+    assert "**摘要依据**: 公开字幕片段" in result

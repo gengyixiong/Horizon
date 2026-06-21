@@ -86,8 +86,44 @@ Fetches any Atom/RSS feed using the `feedparser` library. Tries multiple date fi
 ```
 
 - `category` — optional tag for grouping (e.g., `"programming"`, `"microblog"`)
+- `lookback_days` — optional per-feed window override for slower sources such as podcasts
+- `keywords` — optional case-insensitive title/description substrings applied before AI analysis
 
-**Extracted data**: title, URL, author, content (from `summary`/`description`/`content` fields), feed name, category, and entry tags.
+Podcast entries also expose common iTunes duration fields as `duration_minutes`.
+
+**Extracted data**: title, URL, author, content (from `summary`/`description`/`content` fields), feed name, category, entry tags, and optional duration.
+
+## YouTube Long-form
+
+**File**: `src/scrapers/youtube.py`
+
+Uses the official YouTube Data API v3 to search for long interviews and podcast videos, then calls `videos.list` for duration and engagement statistics. The API key is read from `YOUTUBE_API_KEY` (or the configured `api_key_env`) and sent in the `X-Goog-Api-Key` header so it never appears in logged request URLs.
+
+**Config** (`sources.youtube`):
+
+```json
+{
+  "enabled": true,
+  "api_key_env": "YOUTUBE_API_KEY",
+  "queries": ["\"humanoid robot\" interview"],
+  "lookback_days": 30,
+  "min_duration_minutes": 20,
+  "max_duration_minutes": 180,
+  "min_views": 2000,
+  "min_views_per_day": 200,
+  "max_candidates": 12,
+  "max_items": 3,
+  "transcript_languages": ["en", "zh-Hans", "zh"]
+}
+```
+
+- Search results are deduplicated across queries.
+- Candidates pass when they meet either the total-view or view-velocity threshold.
+- Candidate ranking uses views per day, then total views; the final long-form lane uses AI score first.
+- Public captions are fetched on a best-effort basis and sampled across the full runtime.
+- Transcript endpoint blocks on cloud IPs are non-fatal. The item falls back to its description and records `summary_basis=description`, which the rendered page discloses.
+
+**Extracted data**: title, watch URL, channel, publish time, duration, views, views/day, likes, comments, matched queries, transcript availability, and sampled transcript or description.
 
 ## Reddit
 

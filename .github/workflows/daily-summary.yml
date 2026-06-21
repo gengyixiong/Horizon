@@ -43,6 +43,9 @@ jobs:
         # The script never logs the key itself.
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        # A dedicated smoke run must fail loudly. A normal digest should still
+        # publish its news section if YouTube has a temporary outage.
+        continue-on-error: ${{ inputs.youtube_smoke_only != true }}
         run: uv run python scripts/check_youtube_api.py
 
       - name: Prepare GitHub Actions config
@@ -55,8 +58,9 @@ jobs:
         if: ${{ github.event_name != 'workflow_dispatch' || inputs.youtube_smoke_only != true }}
         env:
           # Store the value only in Settings > Secrets and variables > Actions.
-          # Never commit the DeepSeek API key to this repository.
+          # Never commit the DeepSeek or YouTube API key to this repository.
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         # A 48-hour window reduces empty days in this narrow topic. Semantic
         # deduplication removes duplicate Chinese/English coverage within a run.
         run: uv run horizon --hours 48
