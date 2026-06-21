@@ -1,7 +1,7 @@
 name: Daily Horizon Summary
 
-# Fork-specific rationale, source inventory, query terms, and maintenance steps:
-# HUMANOID_DIGEST.md. Keep this workflow and that document in sync.
+# Fork-specific maintenance entry: AGENTS.md. Detailed source inventory,
+# query terms, and rationale: HUMANOID_DIGEST.md. Keep both documents in sync.
 
 on:
   schedule:

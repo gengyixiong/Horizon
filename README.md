@@ -28,7 +28,7 @@
 
 </div>
 
-> **Fork deployment profile:** This fork powers a bilingual humanoid-robotics daily digest. Read [HUMANOID_DIGEST.md](HUMANOID_DIGEST.md) before changing sources, filtering, prompts, or GitHub Actions.
+> **Fork deployment profile:** This fork powers a bilingual humanoid-robotics daily digest with Telegram delivery. Start with [AGENTS.md](AGENTS.md), then read [HUMANOID_DIGEST.md](HUMANOID_DIGEST.md), before changing sources, filtering, prompts, notifications, or GitHub Actions.
 
 ## Screenshots
 

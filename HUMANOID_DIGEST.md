@@ -2,6 +2,8 @@
 
 > 修改本 fork 的数据源、筛选逻辑或 GitHub Actions 前，请先阅读本文。本文是当前部署配置的维护入口；API Key 不得写入仓库。
 
+AI 助手或新维护者应先从根目录的 `AGENTS.md` 开始；本文件记录更详细的来源清单、检索式和配置理由。
+
 ## 当前用途
 
 本 fork 部署在 `gengyixiong/Horizon`，用于生成只关注人形机器人及紧密相关具身智能技术的中英双语日报。
@@ -35,6 +37,17 @@
 把 `telegram_smoke_only` 设为 `true` 时，只发送 Telegram 测试消息，不调用 DeepSeek，也不发布日报。两个 smoke 选项不要同时启用。
 
 `data/config.github.json` 是严格 JSON，不能加入 `//` 或 `#` 注释。配置意图统一记录在本文。
+
+## 运行链路
+
+1. `.github/workflows/daily-summary.yml` 在每天北京时间 08:00 启动。
+2. 工作流把 `data/config.github.json` 复制为运行时 `data/config.json`，并从 Actions Secrets 注入 DeepSeek、YouTube 和 Telegram 凭据。
+3. RSS、GitHub Releases、OSSInsight 和 YouTube 抓取候选内容；Podcast 作为带关键词预过滤的长内容 RSS 处理。
+4. AI 先判断人形机器人相关性并评分，再生成中英文 enrichment；新闻和长访谈分别去重、排序和限额。
+5. `DailySummarizer` 在同一篇日报里生成“新闻”和“深度访谈 / Podcast”两个区块，并复制到 `docs/_posts/`。
+6. Horizon webhook 向 Telegram 发送一条中文精简版；随后工作流把 `docs/` 发布到 `gh-pages`。
+
+如果只改展示层，不应顺手改变数据源或评分边界；如果只改来源配置，也不应删除当前的双语输出、长内容独立限额或 Telegram 推送。
 
 ## Telegram 推送
 
@@ -168,7 +181,9 @@ AI 评分优先保留：
 6. 确认 `Run Horizon` 和 `Deploy to GitHub Pages` 均成功。
 7. 验证中文、英文文章均生成，并统计实际来源分布与主题相关性。
 8. 检查“深度访谈 / Podcast”区块是否显示时长、播放量和摘要依据；没有字幕时不得把简介摘要描述成完整访谈摘要。
+9. 修改 YouTube 接入后运行 `youtube_smoke_only=true`；修改 Telegram 接入后运行 `telegram_smoke_only=true`。
+10. 修改来源、提示词、评分或配额后，两个 smoke test 都不能替代一次完整日报验证。
 
 ## 给后续维护者
 
-收到本仓库链接后，先读取本文、`data/config.github.json`、工作流和 `CONTENT_ANALYSIS_SYSTEM`，再修改。不要根据上游 Horizon 默认配置覆盖本 fork 的人形机器人专刊设置。
+收到本仓库链接后，依次读取 `AGENTS.md`、本文、`data/config.github.json`、工作流和 `CONTENT_ANALYSIS_SYSTEM`，再修改。不要根据上游 Horizon 默认配置覆盖本 fork 的人形机器人专刊设置。
