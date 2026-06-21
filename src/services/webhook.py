@@ -22,6 +22,7 @@ _PLACEHOLDER_RE = re.compile(r"#\{(\w+)(\?\w+=[^}]+)?\}")
 _SENSITIVE_HEADER_RE = re.compile(
     r"(authorization|token|secret|signature|key|password)", re.IGNORECASE
 )
+_TELEGRAM_BOT_TOKEN_PATH_RE = re.compile(r"/bot[^/]+/", re.IGNORECASE)
 
 
 def _truncate(value: str, limit: int, split: str) -> str:
@@ -197,14 +198,20 @@ def _extract_headers(headers_str: Optional[str]) -> dict:
 
 
 def redact_url(url: str) -> str:
-    """Return a log-safe URL without query strings or fragments."""
+    """Return a log-safe URL without credentials, queries, or fragments.
+
+    Telegram authenticates bots by placing the token in the URL path instead
+    of a header. Mask that path segment explicitly so logs and webhook previews
+    can never reveal the bot token, even outside GitHub Actions' own masking.
+    """
     try:
         parts = urlsplit(url)
     except ValueError:
         return "<invalid-url>"
     if not parts.scheme or not parts.netloc:
         return "<redacted-url>"
-    return urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
+    safe_path = _TELEGRAM_BOT_TOKEN_PATH_RE.sub("/bot<redacted>/", parts.path)
+    return urlunsplit((parts.scheme, parts.netloc, safe_path, "", ""))
 
 
 def redact_headers(headers: dict[str, str]) -> dict[str, str]:

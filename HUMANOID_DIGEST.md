@@ -11,6 +11,7 @@
 - 模型：DeepSeek `deepseek-chat`
 - Secret：仓库 Actions Secret `DEEPSEEK_API_KEY`
 - YouTube Secret：仓库 Actions Secret `YOUTUBE_API_KEY`
+- Telegram Secrets：仓库 Actions Secrets `TELEGRAM_BOT_TOKEN` 和 `TELEGRAM_CHAT_ID`
 - 新闻检索窗口：最近 48 小时
 - 深度访谈检索窗口：最近 30 天
 - 输出语言：简体中文和英文
@@ -26,11 +27,23 @@
 | `src/ai/prompts.py` | `CONTENT_ANALYSIS_SYSTEM` 中的人形机器人相关性硬门槛 |
 | `src/scrapers/youtube.py` | YouTube 官方搜索、播放量/时长过滤、字幕抽样与降级逻辑 |
 | `scripts/check_youtube_api.py` | 用一次最小长视频检索验证 YouTube Key 与 API 限制，不输出 Key |
+| `scripts/check_telegram_api.py` | 向目标 Chat 发送一条测试消息；不输出 Bot Token 或 Chat ID |
 | `docs/` | GitHub Pages 模板；生成的文章会发布到 `docs/_posts/` |
 
 手动运行 `Daily Horizon Summary` 时可把 `youtube_smoke_only` 设为 `true`；此模式只检查 YouTube API，不调用 DeepSeek，也不发布日报。
 
+把 `telegram_smoke_only` 设为 `true` 时，只发送 Telegram 测试消息，不调用 DeepSeek，也不发布日报。两个 smoke 选项不要同时启用。
+
 `data/config.github.json` 是严格 JSON，不能加入 `//` 或 `#` 注释。配置意图统一记录在本文。
+
+## Telegram 推送
+
+- 每次日报只推送中文版本，避免中英文各发一条造成重复提醒。
+- 推送内容是一条精简日报，并附带“阅读完整日报”按钮；完整文章仍在 GitHub Pages。
+- Telegram `sendMessage` 的文本上限为 4096 字符，因此配置把日报正文安全限制在 3500 字符以内。
+- 不设置 Telegram `parse_mode`。AI 生成的 Markdown 可能包含需要额外转义的字符；使用纯文本可以避免整条消息因格式解析失败而被拒绝。
+- `TELEGRAM_BOT_TOKEN` 仅用于在工作流环境中构造 Bot API URL，`TELEGRAM_CHAT_ID` 仅注入请求体，两者都不得提交到仓库。
+- `src/services/webhook.py` 会额外遮盖 Telegram URL 路径里的 Bot Token，防止它出现在日志或 dry-run 预览里。
 
 ## 英文来源与检索式
 

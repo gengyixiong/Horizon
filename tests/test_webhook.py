@@ -411,6 +411,14 @@ class TestWebhookRedaction:
             "X-Trace": "ok",
         }
 
+    def test_redact_url_masks_telegram_bot_token_in_path(self):
+        assert (
+            redact_url(
+                "https://api.telegram.org/bot123456:ABC_secret/sendMessage?chat_id=1"
+            )
+            == "https://api.telegram.org/bot<redacted>/sendMessage"
+        )
+
 
 # ── WebhookNotifier ──
 

@@ -15,6 +15,11 @@ on:
         required: false
         type: boolean
         default: false
+      telegram_smoke_only:
+        description: 'Only send a Telegram test message; skip DeepSeek and publishing'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   daily-summary:
@@ -38,6 +43,7 @@ jobs:
         run: uv sync
 
       - name: Verify YouTube Data API key
+        if: ${{ inputs.telegram_smoke_only != true }}
         # One minimal long-video search verifies that the key exists, YouTube
         # Data API v3 is enabled, and the key restriction permits this API.
         # The script never logs the key itself.
@@ -48,29 +54,42 @@ jobs:
         continue-on-error: ${{ inputs.youtube_smoke_only != true }}
         run: uv run python scripts/check_youtube_api.py
 
+      - name: Send Telegram smoke-test message
+        if: ${{ inputs.telegram_smoke_only == true }}
+        # Keep both values in GitHub Actions Secrets. The script never prints
+        # the bot token and reports only Telegram's safe error description.
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: uv run python scripts/check_telegram_api.py
+
       - name: Prepare GitHub Actions config
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.youtube_smoke_only != true }}
+        if: ${{ github.event_name != 'workflow_dispatch' || (inputs.youtube_smoke_only != true && inputs.telegram_smoke_only != true) }}
         # Strict JSON cannot contain comments. Configuration rationale lives in
         # HUMANOID_DIGEST.md.
         run: cp data/config.github.json data/config.json
 
       - name: Run Horizon
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.youtube_smoke_only != true }}
+        if: ${{ github.event_name != 'workflow_dispatch' || (inputs.youtube_smoke_only != true && inputs.telegram_smoke_only != true) }}
         env:
           # Store the value only in Settings > Secrets and variables > Actions.
-          # Never commit the DeepSeek or YouTube API key to this repository.
+          # Never commit the DeepSeek, YouTube, or Telegram credentials.
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          # Horizon's generic webhook posts JSON to Telegram's sendMessage
+          # endpoint. GitHub masks the token embedded in this environment URL.
+          HORIZON_WEBHOOK_URL: https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         # A 48-hour window reduces empty days in this narrow topic. Semantic
         # deduplication removes duplicate Chinese/English coverage within a run.
         run: uv run horizon --hours 48
 
       - name: Set current date as environment variable
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.youtube_smoke_only != true }}
+        if: ${{ github.event_name != 'workflow_dispatch' || (inputs.youtube_smoke_only != true && inputs.telegram_smoke_only != true) }}
         run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: Deploy to GitHub Pages
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.youtube_smoke_only != true }}
+        if: ${{ github.event_name != 'workflow_dispatch' || (inputs.youtube_smoke_only != true && inputs.telegram_smoke_only != true) }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

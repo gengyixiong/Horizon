@@ -214,43 +214,29 @@
     "default_group_limit": 4
   },
   "webhook": {
-    "enabled": false,
+    "enabled": true,
     "url_env": "HORIZON_WEBHOOK_URL",
     "delivery": "summary",
     "overview_position": "first",
     "platform": "generic",
     "layout": "markdown",
     "fallback_layout": "markdown",
-    "languages": null,
+    "languages": ["zh"],
     "request_body": {
-      "msg_type": "interactive",
-      "card": {
-        "schema": "2.0",
-        "config": {
-          "wide_screen_mode": true
-        },
-        "header": {
-          "title": {
-            "tag": "plain_text",
-            "content": "#{message_title}"
-          },
-          "template": "blue"
-        },
-        "body": {
-          "elements": [
+      "chat_id": "${TELEGRAM_CHAT_ID}",
+      "text": "🤖 人形机器人日报 · #{date}\n\n#{summary?limit=3500&split=---}\n\n完整日报：https://gengyixiong.github.io/Horizon/",
+      "link_preview_options": {
+        "is_disabled": true
+      },
+      "reply_markup": {
+        "inline_keyboard": [
+          [
             {
-              "tag": "markdown",
-              "content": "Horizon生成结果: #{result}\nHorizon日报重要资讯数量: #{important_items}/#{all_items}"
-            },
-            {
-              "tag": "hr"
-            },
-            {
-              "tag": "markdown",
-              "content": "#{summary}"
+              "text": "阅读完整日报",
+              "url": "https://gengyixiong.github.io/Horizon/"
             }
           ]
-        }
+        ]
       }
     },
     "headers": ""
