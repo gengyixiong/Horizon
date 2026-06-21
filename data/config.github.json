@@ -53,31 +53,31 @@
         "name": "人形机器人与具身智能（中文）",
         "url": "https://news.google.com/rss/search?q=%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA+OR+%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD+OR+%E5%8F%8C%E8%B6%B3%E6%9C%BA%E5%99%A8%E4%BA%BA&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
         "enabled": true,
-        "category": "humanoid-industry"
+        "category": "humanoid-zh"
       },
       {
         "name": "Humanoid Robotics News",
         "url": "https://news.google.com/rss/search?q=%22humanoid+robot%22+OR+%22bipedal+robot%22+OR+%22dexterous+manipulation%22&hl=en-US&gl=US&ceid=US%3Aen",
         "enabled": true,
-        "category": "humanoid-industry"
+        "category": "humanoid-en"
       },
       {
         "name": "The Robot Report",
         "url": "https://www.therobotreport.com/feed/",
         "enabled": true,
-        "category": "robotics-industry"
+        "category": "humanoid-en"
       },
       {
         "name": "IEEE Spectrum Robotics",
         "url": "https://spectrum.ieee.org/feeds/topic/robotics.rss",
         "enabled": true,
-        "category": "robotics-research"
+        "category": "humanoid-en"
       },
       {
         "name": "arXiv Humanoid Robotics",
         "url": "https://export.arxiv.org/api/query?search_query=all%3A%22humanoid%20robot%22%20OR%20all%3A%22bipedal%20locomotion%22%20OR%20all%3A%22whole-body%20control%22&start=0&max_results=30&sortBy=submittedDate&sortOrder=descending",
         "enabled": true,
-        "category": "robotics-research"
+        "category": "humanoid-en"
       }
     ],
     "reddit": {
@@ -136,12 +136,23 @@
     }
   },
   "filtering": {
-    "ai_score_threshold": 6.0,
+    "ai_score_threshold": 5.0,
     "time_window_hours": 48,
     "max_items": 15,
-    "category_groups": {},
-    "default_group": "other",
-    "default_group_limit": null
+    "category_groups": {
+      "zh_sources": {
+        "name": "中文来源",
+        "limit": 8,
+        "categories": ["humanoid-zh"]
+      },
+      "en_sources": {
+        "name": "英文来源",
+        "limit": 8,
+        "categories": ["humanoid-en"]
+      }
+    },
+    "default_group": "open-source",
+    "default_group_limit": 4
   },
   "webhook": {
     "enabled": false,
