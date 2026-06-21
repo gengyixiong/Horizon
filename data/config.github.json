@@ -8,7 +8,8 @@
     "max_tokens": 4096,
     "throttle_sec": 0,
     "analysis_concurrency": 1,
-    "enrichment_concurrency": 1
+    "enrichment_concurrency": 1,
+    "languages": ["zh", "en"]
   },
   "email": {
     "enabled": false,
@@ -24,38 +25,63 @@
   "sources": {
     "github": [
       {
-        "type": "user_events",
-        "username": "torvalds",
+        "type": "repo_releases",
+        "owner": "huggingface",
+        "repo": "lerobot",
         "enabled": true
       },
       {
         "type": "repo_releases",
-        "owner": "astral-sh",
-        "repo": "uv",
+        "owner": "isaac-sim",
+        "repo": "IsaacLab",
+        "enabled": true
+      },
+      {
+        "type": "repo_releases",
+        "owner": "unitreerobotics",
+        "repo": "unitree_ros2",
         "enabled": true
       }
     ],
     "hackernews": {
-      "enabled": true,
+      "enabled": false,
       "fetch_top_stories": 20,
       "min_score": 100
     },
     "rss": [
       {
-        "name": "Simon Willison",
-        "url": "https://simonwillison.net/atom/everything/",
+        "name": "人形机器人与具身智能（中文）",
+        "url": "https://news.google.com/rss/search?q=%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA+OR+%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD+OR+%E5%8F%8C%E8%B6%B3%E6%9C%BA%E5%99%A8%E4%BA%BA&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
         "enabled": true,
-        "category": "ai-tools"
+        "category": "humanoid-industry"
       },
       {
-        "name": "LWN.net (subscriber full-text)",
-        "url": "https://lwn.net/headlines/full_text?key=${LWN_KEY}",
-        "enabled": false,
-        "category": "linux"
+        "name": "Humanoid Robotics News",
+        "url": "https://news.google.com/rss/search?q=%22humanoid+robot%22+OR+%22bipedal+robot%22+OR+%22dexterous+manipulation%22&hl=en-US&gl=US&ceid=US%3Aen",
+        "enabled": true,
+        "category": "humanoid-industry"
+      },
+      {
+        "name": "The Robot Report",
+        "url": "https://www.therobotreport.com/feed/",
+        "enabled": true,
+        "category": "robotics-industry"
+      },
+      {
+        "name": "IEEE Spectrum Robotics",
+        "url": "https://spectrum.ieee.org/feeds/topic/robotics.rss",
+        "enabled": true,
+        "category": "robotics-research"
+      },
+      {
+        "name": "arXiv Humanoid Robotics",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A%22humanoid%20robot%22%20OR%20all%3A%22bipedal%20locomotion%22%20OR%20all%3A%22whole-body%20control%22&start=0&max_results=30&sortBy=submittedDate&sortOrder=descending",
+        "enabled": true,
+        "category": "robotics-research"
       }
     ],
     "reddit": {
-      "enabled": true,
+      "enabled": false,
       "subreddits": [
         {
           "subreddit": "MachineLearning",
@@ -101,18 +127,18 @@
       ]
     },
     "ossinsight": {
-      "enabled": false,
+      "enabled": true,
       "period": "past_24_hours",
-      "languages": ["All", "Python", "TypeScript"],
-      "keywords": [],
-      "min_stars": 10,
-      "max_items": 30
+      "languages": ["All", "Python", "C++"],
+      "keywords": ["humanoid", "robot", "robotics", "embodied", "bipedal", "locomotion", "dexterous", "manipulation", "VLA"],
+      "min_stars": 5,
+      "max_items": 20
     }
   },
   "filtering": {
     "ai_score_threshold": 6.0,
-    "time_window_hours": 24,
-    "max_items": null,
+    "time_window_hours": 48,
+    "max_items": 15,
     "category_groups": {},
     "default_group": "other",
     "default_group_limit": null
