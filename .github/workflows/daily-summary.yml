@@ -8,7 +8,13 @@ on:
     # GitHub supports named time zones here; this is 08:00 in China year-round.
     - cron: '0 8 * * *'
       timezone: 'Asia/Shanghai'
-  workflow_dispatch:      # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      youtube_smoke_only:
+        description: 'Only verify YOUTUBE_API_KEY; skip DeepSeek and publishing'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   daily-summary:
@@ -31,12 +37,22 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Verify YouTube Data API key
+        # One minimal long-video search verifies that the key exists, YouTube
+        # Data API v3 is enabled, and the key restriction permits this API.
+        # The script never logs the key itself.
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: uv run python scripts/check_youtube_api.py
+
       - name: Prepare GitHub Actions config
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.youtube_smoke_only != true }}
         # Strict JSON cannot contain comments. Configuration rationale lives in
         # HUMANOID_DIGEST.md.
         run: cp data/config.github.json data/config.json
 
       - name: Run Horizon
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.youtube_smoke_only != true }}
         env:
           # Store the value only in Settings > Secrets and variables > Actions.
           # Never commit the DeepSeek API key to this repository.
@@ -46,9 +62,11 @@ jobs:
         run: uv run horizon --hours 48
 
       - name: Set current date as environment variable
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.youtube_smoke_only != true }}
         run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: Deploy to GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.youtube_smoke_only != true }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

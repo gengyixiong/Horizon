@@ -10,6 +10,7 @@
 - 定时：每天北京时间 08:00
 - 模型：DeepSeek `deepseek-chat`
 - Secret：仓库 Actions Secret `DEEPSEEK_API_KEY`
+- YouTube Secret：仓库 Actions Secret `YOUTUBE_API_KEY`
 - 检索窗口：最近 48 小时
 - 输出语言：简体中文和英文
 - 最终上限：15 条
@@ -22,7 +23,10 @@
 | `data/config.github.json` | GitHub Actions 使用的数据源、模型、语言、阈值与来源配额 |
 | `.github/workflows/daily-summary.yml` | 定时任务、Secret 映射、运行窗口与 Pages 发布 |
 | `src/ai/prompts.py` | `CONTENT_ANALYSIS_SYSTEM` 中的人形机器人相关性硬门槛 |
+| `scripts/check_youtube_api.py` | 用一次最小长视频检索验证 YouTube Key 与 API 限制，不输出 Key |
 | `docs/` | GitHub Pages 模板；生成的文章会发布到 `docs/_posts/` |
+
+手动运行 `Daily Horizon Summary` 时可把 `youtube_smoke_only` 设为 `true`；此模式只检查 YouTube API，不调用 DeepSeek，也不发布日报。
 
 `data/config.github.json` 是严格 JSON，不能加入 `//` 或 `#` 注释。配置意图统一记录在本文。
 
