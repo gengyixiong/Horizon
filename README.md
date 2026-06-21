@@ -28,6 +28,8 @@
 
 </div>
 
+> **Fork deployment profile:** This fork powers a bilingual humanoid-robotics daily digest. Read [HUMANOID_DIGEST.md](HUMANOID_DIGEST.md) before changing sources, filtering, prompts, or GitHub Actions.
+
 ## Screenshots
 
 <table>

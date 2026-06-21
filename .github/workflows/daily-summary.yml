@@ -1,7 +1,11 @@
 name: Daily Horizon Summary
 
+# Fork-specific rationale, source inventory, query terms, and maintenance steps:
+# HUMANOID_DIGEST.md. Keep this workflow and that document in sync.
+
 on:
   schedule:
+    # GitHub supports named time zones here; this is 08:00 in China year-round.
     - cron: '0 8 * * *'
       timezone: 'Asia/Shanghai'
   workflow_dispatch:      # Allow manual trigger
@@ -28,11 +32,17 @@ jobs:
         run: uv sync
 
       - name: Prepare GitHub Actions config
+        # Strict JSON cannot contain comments. Configuration rationale lives in
+        # HUMANOID_DIGEST.md.
         run: cp data/config.github.json data/config.json
 
       - name: Run Horizon
         env:
+          # Store the value only in Settings > Secrets and variables > Actions.
+          # Never commit the DeepSeek API key to this repository.
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        # A 48-hour window reduces empty days in this narrow topic. Semantic
+        # deduplication removes duplicate Chinese/English coverage within a run.
         run: uv run horizon --hours 48
 
       - name: Set current date as environment variable

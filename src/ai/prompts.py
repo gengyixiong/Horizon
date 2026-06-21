@@ -20,6 +20,8 @@ Respond with valid JSON only:
 
 If there are no duplicates at all, return: {{"duplicates": []}}"""
 
+# Fork-specific topic gate for the humanoid-robotics digest. If this scope is
+# changed, update HUMANOID_DIGEST.md and data/config.github.json together.
 CONTENT_ANALYSIS_SYSTEM = """You are an expert editor curating a daily intelligence briefing exclusively about humanoid robotics and closely related embodied AI.
 
 Apply this hard relevance gate before judging importance:

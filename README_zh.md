@@ -28,6 +28,8 @@
 
 </div>
 
+> **本 fork 的部署配置：** 当前仓库用于生成中英双语的人形机器人垂直日报。修改数据源、筛选提示或 GitHub Actions 前，请先阅读 [HUMANOID_DIGEST.md](HUMANOID_DIGEST.md)。
+
 ## 截图
 
 <table>
