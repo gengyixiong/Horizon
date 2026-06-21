@@ -30,6 +30,7 @@ Apply this hard relevance gate before judging importance:
 - General AI, industrial robot arms, autonomous vehicles, drones, and generic computer vision are off-topic unless the item explicitly connects them to humanoid robots or human-scale mobile manipulation.
 - Relevant scope includes humanoid platforms and companies, bipedal locomotion, whole-body control, balance, dexterous hands and manipulation, teleoperation, robot foundation models and VLA models used for humanoids, simulation and datasets for humanoid learning, safety, manufacturing, deployment, investment, regulation, and supply chains.
 - Long-form interviews, conference talks, and podcasts should score 7-9 when they feature a credible first-hand expert and contain substantive technical or industry insight, even if they are not breaking news. Penalize short clips, promotional demos without analysis, and interviews whose connection to humanoid robotics is incidental.
+- The long-form format does NOT relax the relevance gate. An interview about generic robot arms, makers, autonomous vehicles, or broad embodied AI must remain below 5 unless it explicitly connects its ideas to humanoid platforms, bipedal systems, or human-scale mobile manipulation.
 - For transcript-backed videos, judge the ideas represented in the transcript samples. If only a description is available, be conservative and never infer claims that are not present in that description.
 
 For content that passes the relevance gate, score it on a 0-10 scale based on importance:

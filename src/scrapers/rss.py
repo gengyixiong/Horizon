@@ -125,7 +125,7 @@ class RSSScraper(BaseScraper):
                     id=self._generate_id("rss", feed_id, entry_hash),
                     source_type=SourceType.RSS,
                     title=title,
-                    url=entry.get("link", str(source.url)),
+                    url=self._extract_entry_url(entry, str(source.url)),
                     content=content,
                     author=entry.get("author", source.name),
                     published_at=published_at,
@@ -185,6 +185,21 @@ class RSSScraper(BaseScraper):
             return entry.content[0].get("value", "")
 
         return ""
+
+    @staticmethod
+    def _extract_entry_url(entry: dict, feed_url: str) -> str:
+        """Prefer an episode page, then a playable enclosure, over the feed URL."""
+        if entry.get("link"):
+            return str(entry["link"])
+        for link in entry.get("links", []):
+            href = link.get("href")
+            if href and link.get("rel") in {"alternate", "enclosure"}:
+                return str(href)
+        for key in ("guid", "id"):
+            value = str(entry.get(key, ""))
+            if value.startswith(("http://", "https://")):
+                return value
+        return feed_url
 
     @staticmethod
     def _parse_duration_minutes(entry: dict) -> int | None:

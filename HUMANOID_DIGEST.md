@@ -119,7 +119,7 @@ YouTube 规则：
 - Lex Fridman Podcast
 - NVIDIA AI Podcast
 
-Podcast 使用 30 天窗口，并先按人形机器人、具身智能、双足、灵巧操作、VLA 和主要人形机器人公司关键词预过滤。Podcast RSS 通常不公开真实播放量，因此不声称按播放量排名；若无公开字幕，摘要只基于节目简介。
+Podcast 使用 30 天窗口，并先按 `humanoid`、`bipedal`、`whole-body`、`dexterous hand`、人形机器人产品名和主要公司名预过滤。不要加入泛化的 `robot`、`robotics` 或 `embodied` 单词，否则会混入普通机械臂内容。Podcast RSS 通常不公开真实播放量，因此不声称按播放量排名；若无公开字幕，摘要只基于节目简介。
 
 ## 筛选和配额语义
 

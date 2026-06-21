@@ -85,7 +85,7 @@
         "enabled": true,
         "category": "long-form",
         "lookback_days": 30,
-        "keywords": ["humanoid", "robot", "robotics", "embodied", "bipedal", "locomotion", "dexterous", "manipulation", "physical AI", "VLA", "Boston Dynamics", "Figure AI", "Agility Robotics", "Apptronik", "Unitree", "Optimus", "1X", "Sanctuary AI"]
+        "keywords": ["humanoid", "bipedal", "whole-body", "dexterous hand", "human-like robot", "Boston Dynamics", "Atlas", "Figure AI", "Agility Robotics", "Digit", "Apptronik", "Apollo", "Unitree", "Optimus", "1X", "NEO", "Sanctuary AI", "Phoenix", "Fourier", "GR-1"]
       },
       {
         "name": "The Robot Brains Podcast",
@@ -93,7 +93,7 @@
         "enabled": true,
         "category": "long-form",
         "lookback_days": 30,
-        "keywords": ["humanoid", "robot", "robotics", "embodied", "bipedal", "locomotion", "dexterous", "manipulation", "physical AI", "VLA", "Boston Dynamics", "Figure AI", "Agility Robotics", "Apptronik", "Unitree", "Optimus", "1X", "Sanctuary AI"]
+        "keywords": ["humanoid", "bipedal", "whole-body", "dexterous hand", "human-like robot", "Boston Dynamics", "Atlas", "Figure AI", "Agility Robotics", "Digit", "Apptronik", "Apollo", "Unitree", "Optimus", "1X", "NEO", "Sanctuary AI", "Phoenix", "Fourier", "GR-1"]
       },
       {
         "name": "Lex Fridman Podcast",
@@ -101,7 +101,7 @@
         "enabled": true,
         "category": "long-form",
         "lookback_days": 30,
-        "keywords": ["humanoid", "robot", "robotics", "embodied", "bipedal", "locomotion", "dexterous", "manipulation", "physical AI", "VLA", "Boston Dynamics", "Figure AI", "Agility Robotics", "Apptronik", "Unitree", "Optimus", "1X", "Sanctuary AI"]
+        "keywords": ["humanoid", "bipedal", "whole-body", "dexterous hand", "human-like robot", "Boston Dynamics", "Atlas", "Figure AI", "Agility Robotics", "Digit", "Apptronik", "Apollo", "Unitree", "Optimus", "1X", "NEO", "Sanctuary AI", "Phoenix", "Fourier", "GR-1"]
       },
       {
         "name": "NVIDIA AI Podcast",
@@ -109,7 +109,7 @@
         "enabled": true,
         "category": "long-form",
         "lookback_days": 30,
-        "keywords": ["humanoid", "robot", "robotics", "embodied", "bipedal", "locomotion", "dexterous", "manipulation", "physical AI", "VLA", "Boston Dynamics", "Figure AI", "Agility Robotics", "Apptronik", "Unitree", "Optimus", "1X", "Sanctuary AI"]
+        "keywords": ["humanoid", "bipedal", "whole-body", "dexterous hand", "human-like robot", "Boston Dynamics", "Atlas", "Figure AI", "Agility Robotics", "Digit", "Apptronik", "Apollo", "Unitree", "Optimus", "1X", "NEO", "Sanctuary AI", "Phoenix", "Fourier", "GR-1"]
       }
     ],
     "youtube": {

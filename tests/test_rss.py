@@ -79,3 +79,18 @@ def test_rss_keyword_filter_and_podcast_duration() -> None:
     assert len(items) == 1
     assert items[0].metadata["duration_minutes"] == 76
     assert items[0].metadata["summary_basis"] == "description"
+
+
+def test_rss_episode_url_falls_back_to_audio_enclosure() -> None:
+    entry = {
+        "links": [
+            {
+                "rel": "enclosure",
+                "href": "https://cdn.example.com/episode.mp3",
+            }
+        ]
+    }
+
+    assert RSSScraper._extract_entry_url(entry, "https://example.com/feed.xml") == (
+        "https://cdn.example.com/episode.mp3"
+    )
