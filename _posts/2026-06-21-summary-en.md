@@ -5,404 +5,347 @@ date: 2026-06-21
 lang: en
 ---
 
-> From 22 items, 17 important content pieces were selected
+> From 45 items, 15 important content pieces were selected
 
 ---
 
-1. [Loupe iOS app reveals native app data access without permissions](#item-1) ⭐️ 8.0/10
-2. [Epoll vs io_uring: Performance Gains vs Security Risks](#item-2) ⭐️ 8.0/10
-3. [SMPTE Opens Its Standards Library for Free Access](#item-3) ⭐️ 8.0/10
-4. [Time Series Needs Dynamical Systems View](#item-4) ⭐️ 8.0/10
-5. [Open Handbook on LLM Inference at Scale Released](#item-5) ⭐️ 8.0/10
-6. [minFLUX: A Minimal PyTorch Implementation of FLUX Diffusion Models](#item-6) ⭐️ 8.0/10
-7. [Developers Don't Understand CORS](#item-7) ⭐️ 7.0/10
-8. [Slow Breathing Boosts Risk-Taking via Reward Modulation](#item-8) ⭐️ 7.0/10
-9. [Why a Developer Rejects AI Code Even When It Works](#item-9) ⭐️ 7.0/10
-10. [F-15 Strike Eagle II Reverse Engineering Project Seeks Testers](#item-10) ⭐️ 7.0/10
-11. [Build Your Own LLM Workshop Released on YouTube](#item-11) ⭐️ 7.0/10
-12. [Should ML PhDs Graduate Without Top-Tier Papers?](#item-12) ⭐️ 7.0/10
-13. [DVD-JEPA: Open-Source Minimal JEPA World Model](#item-13) ⭐️ 7.0/10
-14. [Global PM2.5 Forecaster ML Model with Horizon-Aligned Architecture](#item-14) ⭐️ 7.0/10
-15. [TownSquare: A Lightweight Presence Layer for Websites](#item-15) ⭐️ 6.0/10
-16. [UHF X11 Brings X11 Window System to Apple Vision Pro](#item-16) ⭐️ 6.0/10
-17. [TSAuditor: Open-source tool for time-series data validation](#item-17) ⭐️ 6.0/10
+1. [First Universal Cerebellum for Humanoid Robots Released](#item-1) ⭐️ 9.0/10
+2. [Chengdu Embodied Robot Firm Lands 5,000-Unit Order](#item-2) ⭐️ 8.0/10
+3. [Humanoid Robot First to Summit 6200m Peak](#item-3) ⭐️ 8.0/10
+4. [Hyundai to Fully Acquire Boston Dynamics, Speeding Up IPO](#item-4) ⭐️ 8.0/10
+5. [Seres Humanoid Robot Debuts in Super Factory for Internal Trial](#item-5) ⭐️ 7.0/10
+6. [Shenzhen Unveils Action Plan to Lead Embodied AI](#item-6) ⭐️ 7.0/10
+7. [Pragmatic Humanoid Startup Secures Hundreds of Millions in Funding](#item-7) ⭐️ 7.0/10
+8. [Shanghai's Unique Half-Hour Supply Chain for Embodied AI](#item-8) ⭐️ 7.0/10
+9. [Robots Learn from Human First-Person Video](#item-9) ⭐️ 7.0/10
+10. [Hyundai's Atlas Robot Shows Pro-Level Soccer Skills](#item-10) ⭐️ 7.0/10
+11. [Beijing Official Promotes Global Embodied AI Robotics Hub](#item-11) ⭐️ 6.0/10
+12. [Where Is Ideal Embodied Intelligence? Chips, Brain, New Paradigm](#item-12) ⭐️ 6.0/10
+13. [Pudong Accelerates Full-Chain Layout for Embodied AI](#item-13) ⭐️ 6.0/10
+14. [Solving Long-Horizon Tasks in Embodied AI: Data Scaling vs. Hierarchical Control](#item-14) ⭐️ 6.0/10
+15. [Beijing Mayor Investigates Embodied Intelligent Robot Industry](#item-15) ⭐️ 6.0/10
 
 ---
 
 <a id="item-1"></a>
-## [Loupe iOS app reveals native app data access without permissions](https://github.com/mysk-research/loupe) ⭐️ 8.0/10
+## [First Universal Cerebellum for Humanoid Robots Released](https://news.google.com/rss/articles/CBMiSEFVX3lxTFBVRjFBYTVVMHhvUWtqdmxiZmZoaDRUcWg2YkVJTG1CT3BiM0ZENzdrUGhCdjNLTXVQRnBLNzZmclVkaF9RdTZQdA?oc=5) ⭐️ 9.0/10
 
-Loupe, an iOS app from mysk-research, demonstrates that native apps can access sensitive data like device setup date, installed app list, and volume creation date without any user permissions. This raises significant privacy concerns for iOS users and developers, highlighting that even without explicit permissions, native apps can infer personal information, potentially enabling fingerprinting or targeted attacks. Loupe categorizes data into passive, permission, and advanced groups, showing that volume creation date and pasteboard change count are exposed without prompts. The installed apps probe can reveal app usage patterns.
+The world's first universal 'cerebellum' for humanoid robots, AstraBrain-WBC 0.5, has been released by Galaxy General, leveraging a massive 20,000-hour human motion dataset to achieve zero-shot generalization across diverse tasks. This breakthrough addresses a key challenge in humanoid robotics—enabling robots to perform unseen tasks without task-specific training, which could accelerate the deployment of general-purpose humanoid robots in real-world applications. The model is built on a whole-body control (WBC) framework and trained on the world's largest human motion dataset of 20,000 hours, enabling zero-shot generalization to new tasks and environments without fine-tuning.
 
-hackernews · Cider9986 · Jun 20, 12:08 · [Discussion](https://news.ycombinator.com/item?id=48608645)
+rss · 人形机器人与具身智能（中文） · Jun 20, 03:20
 
-**Background**: iOS apps are sandboxed, but native apps (pre-installed by Apple) have special entitlements that allow broader system access. Apple's App Privacy Report logs data access, but many users are unaware of what native apps can see by default.
+**Background**: Humanoid robots traditionally require extensive task-specific programming or reinforcement learning for each new action. The 'cerebellum' in robotics refers to a control module that coordinates joint motions and balance, analogous to the human cerebellum. Zero-shot generalization means the robot can perform tasks it has never seen before, based on learned motion priors from human data.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://support.apple.com/guide/iphone/control-access-to-information-in-apps-iph251e92810/ios">Control access to information in apps on iPhone - Apple Support</a></li>
-<li><a href="https://github.com/zoontek/react-native-permissions/issues/240">How to remove unnecessary permissions on iOS? · Issue #240 · zoontek/react-native-permissions</a></li>
+<li><a href="https://www.bridgedp.com/en/">BridgeDP Official Website | Universal Robotics Motion Control...</a></li>
+<li><a href="https://arxiv.org/abs/2505.11719">Zero-Shot Visual Generalization in Robot Manipulation</a></li>
+<li><a href="https://arxiv.org/abs/2602.15922">[2602.15922] World Action Models are Zero-shot Policies</a></li>
 
 </ul>
 </details>
 
-**Discussion**: Commenters expressed shock at the device setup date leak and praised Loupe for raising awareness. Some compared it favorably to Android's current state, while others noted the need for OS-level fuzzing of such data.
-
-**Tags**: `#iOS`, `#privacy`, `#security`, `#mobile apps`, `#data exposure`
+**Tags**: `#humanoid robotics`, `#motion dataset`, `#zero-shot generalization`, `#cerebellum`, `#embodied AI`
 
 ---
 
 <a id="item-2"></a>
-## [Epoll vs io_uring: Performance Gains vs Security Risks](https://sibexi.co/posts/epoll-vs-io_uring/) ⭐️ 8.0/10
+## [Chengdu Embodied Robot Firm Lands 5,000-Unit Order](https://news.google.com/rss/articles/CBMiakFVX3lxTE5kRENjd3NVa212NmpFYlByOHFwdEZTSlZ6emQ4N3cteGFfNkk4bDhwcmVSTV90WHlzaE5nMmtJeUNtWGtCeFlNdERqM29qV1FySHVod2FvZTZwZWJkaHQxdW1vazIzN2FLNGc?oc=5) ⭐️ 8.0/10
 
-A technical article compares epoll and io_uring in Linux, highlighting io_uring's superior performance but noting security drawbacks that limit its adoption. This comparison matters because io_uring offers significant performance improvements for I/O-bound applications, yet its security concerns prevent widespread use in production environments. io_uring uses shared ring buffers between kernel and user space to reduce system calls, achieving up to 20% higher requests per second than epoll, but it has been disabled by default in many distributions due to multiple exploits.
+A Chengdu-based embodied intelligent robot company has secured a purchase order for 5,000 units, marking a major commercial deployment in China. This order signals strong market demand and industrial scaling for embodied intelligent robots, potentially accelerating adoption across manufacturing and service sectors. The order was reported by Sichuan Daily, a reputable local newspaper, and the specific company name and robot model were not disclosed in the brief article.
 
-hackernews · Sibexico · Jun 20, 23:07 · [Discussion](https://news.ycombinator.com/item?id=48613872)
+rss · 人形机器人与具身智能（中文） · Jun 20, 22:54
 
-**Background**: epoll is a Linux I/O event notification facility that has been the standard for asynchronous I/O for years. io_uring is a newer Linux kernel interface introduced in 2019 that provides asynchronous I/O with lower overhead by allowing batch submission and completion of I/O operations without per-operation system calls.
+**Background**: Embodied intelligent robots combine AI with physical bodies to interact with the real world, unlike traditional industrial robots that follow pre-programmed paths. This technology is seen as a key growth area in China's robotics industry, with applications in logistics, healthcare, and domestic service.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Io_uring">io_uring - Wikipedia</a></li>
-<li><a href="https://man7.org/linux/man-pages/man7/io_uring.7.html">io_uring(7) - Linux manual page</a></li>
-<li><a href="https://stackoverflow.com/questions/76598320/is-epoll-a-better-api-than-io-uring">asynchronous - Is epoll a better API than io_uring? - Stack ...</a></li>
+<li><a href="https://www.jaka.com/zh">jaka.com/zh</a></li>
 
 </ul>
 </details>
 
-**Discussion**: Community comments note that io_uring is faster but kernel opt-in and disabled for security reasons, with multiple exploits reported. Some suggest using CPU pinning and libraries like mimalloc for further optimization.
-
-**Tags**: `#Linux`, `#I/O`, `#epoll`, `#io_uring`, `#performance`
+**Tags**: `#deployment`, `#investment`, `#humanoid robotics`, `#China`
 
 ---
 
 <a id="item-3"></a>
-## [SMPTE Opens Its Standards Library for Free Access](https://www.smpte.org/blog/smpte-makes-its-standards-freely-accessible-openingstandards-library-to-the-global-media-technology-community) ⭐️ 8.0/10
+## [Humanoid Robot First to Summit 6200m Peak](https://news.google.com/rss/articles/CBMieEFVX3lxTE8xM243dC1kZUx2UUdBNHpRZXUwWXA0YWVLcU5heEFfeHpCOXM5cHRGSjFvSGlLSlJDWjFMZE1BcHB6MThxSWpDT2ZhLUloMTREOE9RTUZNeHZaeUxwdDZNd2k3Q2JuWXZQUHY1NFZ2aThCVmNJUmhDVQ?oc=5) ⭐️ 8.0/10
 
-SMPTE announced that its entire catalog of standards is now freely accessible to the global media technology community, removing paywalls that previously required purchase or subscription. This move lowers barriers for developers, researchers, and small companies to adopt and implement SMPTE standards, fostering innovation and interoperability in media production and distribution. The free access includes all SMPTE standards documents, and the organization is also modernizing its development process with GitHub workflows, HTML-based authoring, and an integrated publishing pipeline.
+In early June, US startup Geologic Dome modified a Unitree G1 humanoid robot named Pemba to summit Ecuador's Chimborazo volcano (about 6200m) in 16 hours, marking the first time a humanoid robot has climbed a peak above 6200 meters. This achievement demonstrates humanoid robots' potential for extreme-terrain locomotion and environmental adaptation, paving the way for applications in high-altitude research, disaster response, and planetary exploration. Pemba was not fully autonomous: on slopes below 30 degrees it walked independently, but on steeper technical terrain the expedition team carried it. The robot wore a climbing jacket and followed human mountaineering routes.
 
-hackernews · zdw · Jun 20, 17:01 · [Discussion](https://news.ycombinator.com/item?id=48610827)
+rss · 人形机器人与具身智能（中文） · Jun 21, 04:33
 
-**Background**: SMPTE (Society of Motion Picture and Television Engineers) is a key standards body for media technology, defining widely used standards like SMPTE timecode and VC-1. Previously, accessing these standards required payment, which limited their adoption, especially among smaller entities and open-source projects.
+**Background**: Humanoid robots are designed to mimic human form and movement, enabling them to navigate environments built for humans. The Unitree G1 is a commercially available humanoid robot known for its agility, including backflips and side flips. This climb tested bipedal locomotion at high altitude with low oxygen and rough terrain.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://www.tvtechnology.com/standards/smpte-makes-its-standards-freely-accessible-to-the-global-media-technology-community">SMPTE Makes Its Standards Freely Accessible to the Global Media Technology Community | TV Tech</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Society_of_Motion_Picture_and_Television_Engineers">Society of Motion Picture and Television Engineers - Wikipedia</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Category:SMPTE_standards">Category:SMPTE standards - Wikipedia</a></li>
+<li><a href="https://www.sina.cn/news/detail/5311890523947703.html">人形机器人登顶6200米高峰_新浪新闻</a></li>
+<li><a href="https://www.ithome.com/0/966/427.htm">人形机器人成功登顶海拔 6200 米火山：基于宇树 G1 改装，目标挑战珠峰 - IT之家</a></li>
+<li><a href="https://www.yzwb.net/news/sh/202606/t20260620_364373.html">基于宇树G1改装，人形机器人首次登顶6200米以上高峰</a></li>
 
 </ul>
 </details>
 
-**Discussion**: Commenters largely welcomed the move, with some noting that open standards bodies like IETF have long provided free access, and questioning why SMPTE didn't do this sooner. Others highlighted the practical benefits for integration projects and the alignment with modern development practices.
-
-**Tags**: `#open standards`, `#media technology`, `#SMPTE`, `#standards bodies`
+**Tags**: `#bipedal locomotion`, `#humanoid robot`, `#extreme environment`, `#milestone`
 
 ---
 
 <a id="item-4"></a>
-## [Time Series Needs Dynamical Systems View](https://www.reddit.com/r/MachineLearning/comments/1uark0u/time_series_modeling_needs_a_dynamical_systems/) ⭐️ 8.0/10
+## [Hyundai to Fully Acquire Boston Dynamics, Speeding Up IPO](https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JeDNlVFdFdTQ5T2habGVBZ0NrY1U3MFVKRkZhdWVZQ1Zpd3hhQUFkbHNQbWRScmxSVVpQRXY3WHZUSHo1U0Yyc00wUUFOa0NoYXp3?oc=5) ⭐️ 8.0/10
 
-An ICML 2026 position paper argues that time series modeling should adopt a dynamical systems perspective, proposing five concrete recommendations including generalized teacher forcing and pretraining on simulations of chaotic systems. This paradigm shift could enable true out-of-domain generalization and long-term prediction, addressing fundamental limitations of current time series models like transformers. The paper recommends moving away from transformers back to modern RNNs, as dynamical systems are defined by recursions in time. It also highlights topological shifts (e.g., tipping points) as the hardest problem in time series forecasting.
+Hyundai Motor Group is set to acquire full control of Boston Dynamics from SoftBank, likely accelerating the humanoid robot maker's U.S. stock market listing. This move gives Hyundai complete ownership of a leading humanoid robotics company, potentially speeding up commercialization and investment in humanoid robots for industrial use. Hyundai initially acquired a controlling stake in Boston Dynamics in 2020 and completed the deal in June 2021; the full acquisition now paves the way for a U.S. IPO, with Boston Dynamics' Atlas robot already announced as a product for factories by 2028.
 
-reddit · r/MachineLearning · /u/DangerousFunny1371 · Jun 20, 08:47
+rss · Humanoid Robotics News · Jun 19, 08:33
 
-**Background**: Dynamical systems reconstruction (DSR) aims to infer the underlying dynamical rules from observed time series, going beyond mere forecasting. Takens' theorem provides a theoretical foundation for reconstructing the state space from delayed observations. Generalized teacher forcing is a training technique that stabilizes gradients when learning chaotic dynamics.
+**Background**: Boston Dynamics is known for advanced robots like Atlas and Spot. Hyundai, a major automaker, aims to integrate robotics into future mobility solutions. The full acquisition removes SoftBank as a stakeholder, simplifying corporate structure for a potential IPO.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Takens's_theorem">Takens's theorem - Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Boston_Dynamics">Boston Dynamics - Wikipedia</a></li>
+<li><a href="https://bostondynamics.com/news/hyundai-motor-group-completes-acquisition-of-boston-dynamics-from-softbank/">Hyundai Motor Group Acquires Boston Dynamics | Boston Dynamics</a></li>
+<li><a href="https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lRd3VXa0VCR3Y5RXhBLTZDZ2R5Z0FQAQ?hl=en-US&gl=US&ceid=US:en">Google News - News about Boston Dynamics • humanoid robot ...</a></li>
 
 </ul>
 </details>
 
-**Discussion**: The Reddit discussion is substantive, with technical comments debating the role of transformers versus RNNs and the feasibility of pretraining on simulated dynamical systems. Some commenters express skepticism about the practical adoption of these recommendations.
-
-**Tags**: `#time series`, `#dynamical systems`, `#machine learning`, `#ICML 2026`, `#foundation models`
+**Tags**: `#Boston Dynamics`, `#Hyundai Motor`, `#corporate acquisition`, `#IPO`, `#humanoid robotics`
 
 ---
 
 <a id="item-5"></a>
-## [Open Handbook on LLM Inference at Scale Released](https://www.reddit.com/r/MachineLearning/comments/1uavduv/an_open_handbook_on_llm_inference_at_scale_gpu/) ⭐️ 8.0/10
+## [Seres Humanoid Robot Debuts in Super Factory for Internal Trial](https://news.google.com/rss/articles/CBMickFVX3lxTE01U01pU1lVdnpNWV9TSzU3aVFJS21oYk5IZWFtbThnQzhoelEtR1VRMXU0bDZpczZGSk9ONEN6NVhNQVh5Q01iZVVzVEp2MFZLR3lBY2hjbmJjMy1VQXVJM1BjdkR5cDNwZ1NycWlVY191UQ?oc=5) ⭐️ 7.0/10
 
-An open, in-progress handbook detailing LLM inference internals, including GPU execution and memory hierarchy, KV cache, batching, and production frameworks like vLLM, SGLang, and TensorRT-LLM, has been released on GitHub. This handbook provides a comprehensive, community-driven resource for understanding and optimizing LLM inference, which is critical for deploying large models efficiently in production. The handbook includes mermaid diagrams for architecture visualization and covers why GPUs sit idle during inference, how memory hierarchy gates throughput, and real bottlenecks. The author invites community feedback via issues and PRs.
+On June 15, 2025, Seres Group publicly unveiled its humanoid robot named 'Xiao Sai' at its super factory, where it has already begun internal trials. The robot was shown alongside actor Huang Bo during a factory tour. This marks a significant milestone for Chinese automakers deploying humanoid robots in real industrial environments, potentially accelerating automation in manufacturing. It also signals Seres' ambition to expand beyond electric vehicles into embodied AI and robotics. Seres Vice President Kang Bo revealed that more types of embodied intelligent robots are in preparation and will be officially unveiled later this year. The robot 'Xiao Sai' was demonstrated at the super factory, which operates 24/7 for electric vehicle production.
 
-reddit · r/MachineLearning · /u/YouFirst295 · Jun 20, 12:27
+rss · 人形机器人与具身智能（中文） · Jun 20, 16:39
 
-**Background**: LLM inference at scale requires careful optimization of GPU memory and compute to achieve low latency and high throughput. Key techniques include KV cache management, continuous batching, and quantization, implemented in frameworks like vLLM and TensorRT-LLM.
+**Background**: Seres Group is a Chinese automaker known for its partnership with Huawei in producing electric vehicles under the AITO brand. The company's super factory is a highly automated facility that leverages AI and robotics for EV manufacturing. Humanoid robots are a form of embodied AI designed to perform tasks in human-centric environments, and their deployment in factories represents a step toward general-purpose industrial automation.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://www.youngju.dev/blog/gpu-cuda/2026-03-17-gpu-memory-inference-optimization-guide.en">GPU Memory Management & LLM Inference Optimization: vLLM ...</a></li>
-<li><a href="https://vllm.ai/">vLLM</a></li>
-<li><a href="https://github.com/NVIDIA/TensorRT-LLM">GitHub - NVIDIA/TensorRT-LLM: TensorRT LLM provides users ... Welcome to TensorRT LLM’s Documentation! — TensorRT LLM GitHub - NVIDIA/Model-Optimizer: A unified library of SOTA ... TensorRT-LLM Optimization: Boost Inference Speed by 300% TensorRT-LLM Optimization | Introl Blog</a></li>
+<li><a href="https://www.ithome.com/0/964/484.htm">赛力斯人形机器人首次亮相，副总裁康波透露还有更多种类今年亮相 - It之家</a></li>
+<li><a href="https://news.qq.com/rain/a/20260615A07I4R00">赛力斯人形机器人首次亮相，副总裁康波：还有更多种类今年亮相</a></li>
+<li><a href="https://news.qq.com/rain/a/20260615A06U9L00">赛力斯人形机器人首次亮相超级工厂 已开展内部试用_腾讯新闻</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#LLM inference`, `#GPU internals`, `#vLLM`, `#TensorRT-LLM`, `#systems optimization`
+**Tags**: `#赛力斯`, `#人形机器人`, `#工厂部署`, `#内部试用`
 
 ---
 
 <a id="item-6"></a>
-## [minFLUX: A Minimal PyTorch Implementation of FLUX Diffusion Models](https://www.reddit.com/r/MachineLearning/comments/1ub1db3/studying_flux_in_diffusers_library_was_hard_so_i/) ⭐️ 8.0/10
+## [Shenzhen Unveils Action Plan to Lead Embodied AI](https://news.google.com/rss/articles/CBMimAFBVV95cUxOYURjSnY2QURJWjJzUHEtaG84WTVmTlNmTzI5U1pZU1FCUEtPQ3RXVHRQd0E4QXBpeE9rckpnUkZFOEVJSm9ZdFgzNFplNVFJWFNkUTV0dEVXTnVzcmwyZUx4TFFIV3NUWjhOSW9jWHFhRFd6aUNpLW1UcUo0ZXVHQ0RMaGFkSkZ4TGJ6YlU0OHRkdzZraFIzOA?oc=5) ⭐️ 7.0/10
 
-A developer released minFLUX, a minimal PyTorch implementation of FLUX.1 and FLUX.2 diffusion models, with line-by-line mappings to HuggingFace diffusers, training and inference loops, and architecture insights. This project makes studying state-of-the-art FLUX diffusion models accessible by stripping away the complexity of the official diffusers library, benefiting researchers and practitioners who want to understand or modify the core architecture. minFLUX includes both FLUX.1 and FLUX.2 implementations, highlighting architectural differences such as improved transformer blocks, modulation, FFN, VAE normalization, and position IDs. It uses flow matching with velocity MSE for training and Euler ODE solver for inference.
+Shenzhen has released an action plan aimed at becoming a global hub for embodied AI, outlining key priorities and support measures for the industry. This government initiative could significantly shape the development, funding, and regulation of embodied AI, impacting manufacturing and deployment in China and globally. The plan includes specific priorities such as technological breakthroughs, industrial clusters, and talent cultivation, with supporting policies in finance, land, and talent.
 
-reddit · r/MachineLearning · /u/Other-Eye-8152 · Jun 20, 16:50
+rss · 人形机器人与具身智能（中文） · Jun 20, 14:55
 
-**Background**: FLUX is a state-of-the-art text-to-image diffusion model developed by Black Forest Labs, outperforming models like Midjourney and DALL-E 3. The official HuggingFace diffusers library provides a comprehensive but complex implementation, making it difficult for learners to isolate core concepts. minFLUX simplifies this by providing a clean, minimal codebase with explicit mappings.
+**Background**: Embodied AI refers to AI systems embedded in physical entities like robots that interact with the environment through sensors and actuators. Shenzhen, known as China's Silicon Valley, is accelerating its push in AI and robotics to compete globally.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Flux_(text-to-image_model)">Flux (text-to-image model) - Wikipedia</a></li>
-<li><a href="https://arxiv.org/abs/2507.09595">[2507.09595] Demystifying Flux Architecture - arXiv.org</a></li>
-<li><a href="https://arxiv.org/abs/2210.02747">[2210.02747] Flow Matching for Generative Modeling</a></li>
+<li><a href="https://www.eyeshenzhen.com/content/2025-03/10/content_31484197.htm">Stakes are raised: Shenzhen eyeing lead in AI , embodied AI robotics</a></li>
+<li><a href="https://cset.georgetown.edu/wp-content/uploads/CSET-Chinas-Embodied-AI.pdf">CSET - Chinas Embodied AI : A Path to AGI</a></li>
 
 </ul>
 </details>
 
-**Discussion**: The community response has been positive, with users appreciating the clarity and educational value of the project. Some commenters noted the usefulness of the line-by-line mappings for understanding the official codebase.
-
-**Tags**: `#diffusion models`, `#FLUX`, `#PyTorch`, `#open source`, `#machine learning`
+**Tags**: `#policy`, `#Shenzhen`, `#embodied AI`, `#regulation`, `#investment`
 
 ---
 
 <a id="item-7"></a>
-## [Developers Don't Understand CORS](https://fosterelli.co/developers-dont-understand-cors) ⭐️ 7.0/10
+## [Pragmatic Humanoid Startup Secures Hundreds of Millions in Funding](https://news.google.com/rss/articles/CBMiU0FVX3lxTFBmdjljelNNSXo3bm5Ma2YzeFQ5TEF4aDlsUi1OYnN1c0U1b1NIbkFJOFg4QmFlbFkzd0tRWkFWSkctdDVMTjBTcmlsX0xJbmhWT1Vz?oc=5) ⭐️ 7.0/10
 
-A 2019 blog post argues that many developers misunderstand CORS, but community comments reveal that even the author's explanation contains inaccuracies, such as claiming CORS restricts which websites can send requests to a server. CORS is a critical web security mechanism, yet widespread misunderstanding leads to misconfigurations and security vulnerabilities. This discussion highlights the need for better developer education on HTTP and browser security models. CORS does not prevent other websites from sending requests to a server; it only controls whether the browser allows JavaScript to read the response. The article's example about Zoom and localhost is flawed because CORS does not restrict request sending.
+A pragmatic humanoid robotics startup, Daka Robotics, completed four funding rounds in its first year, raising hundreds of millions of yuan, and secured 300 million yuan in orders, achieving an early closed loop for its embodied world model. This demonstrates strong commercial traction and investor confidence in humanoid robotics, signaling that the industry is moving from research to real-world deployment with viable business models. The company's embodied world model integrates perception, cognition, and action to enable robots to interact with the physical world. The 300 million yuan in orders likely come from industrial or service applications, validating the technology's practicality.
 
-hackernews · toilet · Jun 21, 01:35 · [Discussion](https://news.ycombinator.com/item?id=48614844)
+rss · 人形机器人与具身智能（中文） · Jun 20, 04:30
 
-**Background**: CORS (Cross-Origin Resource Sharing) is a browser mechanism that allows controlled access to resources from a different origin. It works via HTTP headers, and browsers enforce it by blocking cross-origin reads unless the server explicitly permits them via the Access-Control-Allow-Origin header. Preflight requests are used for complex requests to check server permissions before the actual request.
+**Background**: Embodied world models are AI systems that allow robots to understand and predict the physical environment through interaction, combining perception, memory, and planning. They are a key enabler for general-purpose robots that can operate in unstructured settings. Daka Robotics focuses on practical, cost-effective solutions rather than pursuing general artificial intelligence.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS">Cross-Origin Resource Sharing ( CORS ) - HTTP | MDN</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request">Preflight request - Glossary | MDN</a></li>
-<li><a href="https://dev.to/shikarisohan/simple-vs-preflighted-requests-in-cors-what-developers-need-to-know-276n">Simple vs. Preflighted Requests in CORS: What Developers Need ...</a></li>
+<li><a href="https://fi.ee.tsinghua.edu.cn/public/publications/0940dda4-af15-11f0-9d60-0242ac120002.pdf">A Survey of Embodied World Models</a></li>
+<li><a href="https://fi.ee.tsinghua.edu.cn/news/18/">清华团队：具身世界模型综述绘就通用智能体发展技术新蓝图</a></li>
 
 </ul>
 </details>
 
-**Discussion**: Commenters point out that the article itself misrepresents CORS, and many developers struggle with the underlying threat model. Some suggest reading MDN's CORS documentation for a correct understanding, while others note that backend developers often forget CORS details due to infrequent use.
-
-**Tags**: `#CORS`, `#web security`, `#developer education`, `#HTTP`
+**Tags**: `#funding`, `#humanoid robot`, `#embodied AI`, `#commercial deployment`, `#China`
 
 ---
 
 <a id="item-8"></a>
-## [Slow Breathing Boosts Risk-Taking via Reward Modulation](https://www.cell.com/neuron/fulltext/S0896-6273(26)00339-9) ⭐️ 7.0/10
+## [Shanghai's Unique Half-Hour Supply Chain for Embodied AI](https://news.google.com/rss/articles/CBMieEFVX3lxTE5KNFUtYU5mbnhGaXZfNlBqVzB0QnlRODdTdTN5SnRGVlZMZHNVX21DYjFScFRINDg4SExhVVJxZXNpTmJDWFE5WUM2enZkSlVkU2kwRmsxdGc3ekUwN2M3bFRqQXJ0SzRiZmVkUENkX1ZmdUNQaS1xeA?oc=5) ⭐️ 7.0/10
 
-A study published in Neuron reveals that slow breathing, particularly prolonged exhalation, increases risk-taking behavior by enhancing reward responsiveness through parasympathetic nervous system activation. This finding challenges the common assumption that slow breathing always reduces risk, offering new insights for anxiety treatment and performance enhancement in contexts like public speaking. The study specifically linked prolonged exhalation to increased reward responsiveness, with implications for clinical conditions such as anxiety, panic disorder, and depression that involve distinct autonomic signatures and maladaptive reward processing.
+Shanghai has developed a unique 'half-hour supply chain' for embodied AI, enabling rapid prototyping and mass production of humanoid robots, with a robot rolling off the production line every 30 minutes. This supply chain advantage positions Shanghai as a global leader in embodied AI and humanoid robot deployment, accelerating the transition from R&D to mass production and potentially transforming industries like manufacturing and logistics. The half-hour supply chain covers the entire process from component sourcing to final assembly within a 30-minute radius, drastically reducing lead times. Experts predict that embodied AI in humanoid robots will achieve 'intelligence emergence' by 2030.
 
-hackernews · croes · Jun 20, 22:22 · [Discussion](https://news.ycombinator.com/item?id=48613555)
+rss · 人形机器人与具身智能（中文） · Jun 20, 13:10
 
-**Background**: The autonomic nervous system has two branches: the sympathetic (fight-or-flight) and parasympathetic (rest-and-digest). Slow breathing is known to increase parasympathetic activity, which typically promotes calmness. This study shows that such calmness can paradoxically increase risk-taking by altering reward processing.
+**Background**: Embodied AI refers to AI systems that interact with the physical world through sensors and actuators, enabling robots to perceive, learn, and act in real environments. Unlike traditional AI confined to digital spaces, embodied AI bridges the gap between computation and physical action. Shanghai's concentrated manufacturing ecosystem and policy support have enabled this unique supply chain density.
 
-**Discussion**: Commenters expressed surprise that parasympathetic activation increases risk-taking, with some noting practical applications for overcoming irrational fear in public speaking. Others questioned whether sustained breathing training could permanently alter default breathing patterns, and one commenter humorously referenced a children's show.
+<details><summary>References</summary>
+<ul>
+<li><a href="https://www.techtarget.com/searchenterpriseai/definition/embodied-AI">What Is Embodied AI ? How It Powers Autonomous... | TechTarget</a></li>
+<li><a href="https://www.foxnews.com/tech/humanoid-robots-hit-mass-production-china">Humanoid robots hit mass production in China - Fox News</a></li>
+<li><a href="https://www.scmp.com/tech/tech-trends/article/3307356/chinas-humanoid-robot-sector-enters-mass-production-unitree-agibot-among-pack">China's humanoid robot sector enters mass production with Unitree, AgiBot among pack</a></li>
 
-**Tags**: `#neuroscience`, `#breathing`, `#risk-taking`, `#autonomic nervous system`, `#anxiety`
+</ul>
+</details>
+
+**Tags**: `#supply chain`, `#manufacturing`, `#China`, `#embodied AI`, `#deployment`
 
 ---
 
 <a id="item-9"></a>
-## [Why a Developer Rejects AI Code Even When It Works](https://vinibrasil.com/when-i-reject-ai-code-even-if-it-works/) ⭐️ 7.0/10
+## [Robots Learn from Human First-Person Video](https://news.google.com/rss/articles/CBMiSEFVX3lxTE4yZDhlVWp0REtYQTh2ZlBvNExKVXJOMG82SDlXUGNzUkhtcFQza0lENEZPdFkwMm5GUjJiTGZObENqMlJPbXVqRg?oc=5) ⭐️ 7.0/10
 
-A developer explains why they reject AI-generated code even when it works, citing unnecessary complexity and lack of maintainability, sparking a discussion on the balance between AI assistance and code quality. This matters because it highlights a critical tension in software engineering: AI tools can produce working code quickly, but code quality and maintainability remain paramount for long-term project health. The article notes that AI often generates over-engineered solutions with complex abstractions, and that rejecting such code is analogous to rejecting a coworker's code for the same reasons.
+Researchers have achieved a breakthrough in embodied intelligence by enabling robots to learn manipulation and navigation tasks directly from human first-person video demonstrations, yielding surprisingly effective results. This approach could dramatically reduce the cost and effort of robot training by leveraging abundant human video data, accelerating the development of general-purpose humanoid robots capable of performing everyday tasks. The method uses imitation learning from egocentric video, aligning the robot's perspective with human first-person views, and has been tested on tasks like object manipulation and navigation with high success rates.
 
-hackernews · vnbrs · Jun 21, 00:58 · [Discussion](https://news.ycombinator.com/item?id=48614631)
+rss · 人形机器人与具身智能（中文） · Jun 19, 07:50
 
-**Background**: AI-assisted coding tools like GitHub Copilot and ChatGPT can generate code snippets based on natural language prompts. However, generated code may prioritize correctness over readability, leading to maintenance challenges.
+**Background**: Embodied intelligence refers to AI systems that learn through physical interaction with the environment. Imitation learning (or learning from demonstration) is a paradigm where an agent learns tasks by observing expert demonstrations. Using first-person video is particularly challenging because the robot must map human actions to its own embodiment.
 
-**Discussion**: Commenters debate the trade-offs: some argue that rejecting AI code is like rejecting a coworker's code for quality reasons, while others note that AI tends to produce overly complex patterns, making it hard to find a middle ground between full understanding and 'vibe coding'.
+<details><summary>References</summary>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Embodied_intelligence">Embodied intelligence</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Imitation_learning">Imitation learning - Wikipedia</a></li>
+<li><a href="https://www.1x.tech/discover/world-model-self-learning">1X World Model | From Video to Action: A New Way Robots Learn</a></li>
 
-**Tags**: `#AI-assisted coding`, `#code quality`, `#software engineering`, `#LLM`, `#developer experience`
+</ul>
+</details>
+
+**Tags**: `#embodied AI`, `#robot learning`, `#imitation learning`, `#humanoid robots`, `#first-person video`
 
 ---
 
 <a id="item-10"></a>
-## [F-15 Strike Eagle II Reverse Engineering Project Seeks Testers](https://neuviemeporte.github.io/f15-se2/2026/06/20/needyou.html) ⭐️ 7.0/10
+## [Hyundai's Atlas Robot Shows Pro-Level Soccer Skills](https://news.google.com/rss/articles/CBMimgFBVV95cUxPT3VwWURYQkhWXzNOVUtjODhKeUQtOEhwOElORG9VQk1ucHVsZW5Wc3Z5Z1gzRDd2Q2wwNnVJSFRWT1dKLXFud3V3MkZ6azRjQmhQR01kRURHOTNzUldqSDJCc2xobGNvU29uUllxUXdLV3RfUkVGWk16SmdieFctOWhSTGRLQlRFUk1yWXdwZmtKSGFoZWxYQ29B?oc=5) ⭐️ 7.0/10
 
-A hobbyist reverse engineering project aims to convert the DOS game F-15 Strike Eagle II from assembly to C, and is now seeking testers with the original game files to help find bugs introduced during the process. This project demonstrates a deep technical approach to preserving classic games, going beyond emulation to create portable, modern source code that can be compiled for multiple platforms. The project targets version 451.03 of the game (the 1991 Desert Storm expansion) and requires testers to run the reconstructed code under DOSBox or real DOS hardware.
+Hyundai's Atlas humanoid robot, developed by Boston Dynamics, has demonstrated professional-level soccer moves including dribbling, passing, and shooting with dynamic balance and coordination. This breakthrough highlights significant progress in bipedal locomotion and dynamic balance, bringing humanoid robots closer to real-world applications in industrial and service settings. The Atlas robot performs soccer moves autonomously, relying on advanced AI and real-time control algorithms to maintain balance during rapid direction changes and kicks.
 
-hackernews · LowLevelMahn · Jun 20, 15:10 · [Discussion](https://news.ycombinator.com/item?id=48609766)
+rss · Humanoid Robotics News · Jun 20, 15:15
 
-**Background**: F-15 Strike Eagle II is a combat flight simulator released by MicroProse in 1989. The original game was written in a mix of C and assembly. Reverse engineering from assembly to C is a complex process that often introduces new bugs, making testing crucial.
+**Background**: Bipedal locomotion is one of the hardest problems in robotics, requiring precise control of balance and coordination. Atlas is a humanoid robot originally developed by Boston Dynamics, now owned by Hyundai, which has been used for research in dynamic movement and manipulation.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/F-15_Strike_Eagle_II">F-15 Strike Eagle II - Wikipedia</a></li>
-<li><a href="https://www.reddit.com/r/programming/comments/1crelua/dos_game_f15_strike_eagle_ii_reverse/">DOS game "F-15 Strike Eagle II" reverse engineering ... - Reddit</a></li>
-<li><a href="https://maniacsvault.net/articles/dosporting">Porting Games from DOS to Modern Platforms - Blzut3's Weblog</a></li>
+<li><a href="https://www.hyundai.com/worldwide/en/newsroom/detail/hyundai-motor-group-announces-ai-robotics-strategy-to-lead-human-centered-robotics-era-at-ces-2026-0000001100">Hyundai Motor Group Announces AI Robotics Strategy to Lead Human ...</a></li>
+<li><a href="https://newatlas.com/ai-humanoids/boston-dynamics-production-atlas-hyundai/">Atlas humanoid robots enter Hyundai factories for industrial use</a></li>
+<li><a href="https://interestingengineering.com/ai-robotics/hyundai-25000-atlas-humanoid-robots-us-plants">Hyundai to deploy 25,000 Atlas robots across US plants in major push</a></li>
 
 </ul>
 </details>
 
-**Discussion**: Commenters expressed appreciation for the project and shared nostalgia for the game. Some questioned why decompile when emulation works, while others noted the benefits of portability. One user suggested using AI to help reason about decompiled code structure.
-
-**Tags**: `#reverse engineering`, `#DOS`, `#retro gaming`, `#porting`, `#open source`
+**Tags**: `#humanoid robotics`, `#bipedal locomotion`, `#Atlas`, `#Hyundai`, `#dynamic movement`
 
 ---
 
 <a id="item-11"></a>
-## [Build Your Own LLM Workshop Released on YouTube](https://www.reddit.com/r/MachineLearning/comments/1uazlnd/hi_reddit_i_posted_my_build_your_own_llm_workshop/) ⭐️ 7.0/10
+## [Beijing Official Promotes Global Embodied AI Robotics Hub](https://news.google.com/rss/articles/CBMiSEFVX3lxTE1DblAyVVlnYUFPSWtXV0RiVklGemJmSDlXb2xQTWJQVElBdExvcF9CODBydXgtN1BGQ0g5TjFkNm5Lc3lnT1pocQ?oc=5) ⭐️ 6.0/10
 
-JustinAngel published a full workshop video on YouTube teaching how to build an LLM from scratch, covering ML fundamentals to transformer architecture, with no math prerequisites. This resource fills a critical gap for beginners by providing an intuitive, code-first approach to understanding LLMs, potentially accelerating learning for many aspiring AI practitioners. The workshop includes slides, Excel-based math intuition, and PyTorch code examples, covering topics like SwiGLU, RoPE, GQA, and instruction tuning.
+Yin Yong, a senior Beijing official, conducted a research visit to promote the development of embodied intelligent robots and humanoid robotics, aiming to build a globally leading industry hub. This signals strong policy support from the Chinese government for embodied AI and humanoid robotics, which could accelerate industry growth and attract investment, positioning China as a key player in this emerging field. The visit focused on embodied intelligent robots, which combine AI with physical bodies to interact with the environment, and humanoid robots designed for complex tasks. No specific funding or timeline was announced.
 
-reddit · r/MachineLearning · /u/JustinAngel · Jun 20, 15:36
+rss · 人形机器人与具身智能（中文） · Jun 19, 23:49
 
-**Background**: Building an LLM from scratch typically requires deep understanding of machine learning and mathematics. This workshop aims to lower the barrier by using code and Excel examples to build intuition, making advanced concepts accessible to a wider audience.
+**Background**: Embodied AI refers to artificial intelligence housed in a physical robot or device that can sense, act, and learn from its environment, unlike software-only AI. Humanoid robots are a key application, designed to perform tasks in human-centric environments. China has been actively promoting robotics and AI as strategic industries.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://abdulkaderhelwan.medium.com/swiglu-activation-function-77627e0b2b52">SwiGLU Activation Function . SwiGLU (Swish-Gated Linear... | Medium</a></li>
-<li><a href="https://www.peakinfer.com/blog/the-performance-wins-from-fusing-kernels">The Performance Wins from Fusing Kernels | PeakInfer Blog</a></li>
-<li><a href="https://mbrenndoerfer.com/writing/weight-initialization-neural-networks-xavier-he">Weight Initialization : Xavier, He & Variance Preservation - Interactive</a></li>
+<li><a href="https://www.nvidia.com/en-us/glossary/embodied-ai/">Embodied AI: What Is It and How to Build It?</a></li>
+<li><a href="https://encord.com/blog/embodied-ai/">What is Embodied AI? A Guide to AI in Robotics | Encord</a></li>
 
 </ul>
 </details>
 
-**Discussion**: The Reddit community reacted positively, with many appreciating the comprehensive and accessible approach. Some users discussed specific topics like SwiGLU and fused kernels, indicating the content resonates with both beginners and experienced practitioners.
-
-**Tags**: `#LLM`, `#Machine Learning`, `#Tutorial`, `#Deep Learning`, `#PyTorch`
+**Tags**: `#policy`, `#China`, `#embodied AI`, `#industry development`
 
 ---
 
 <a id="item-12"></a>
-## [Should ML PhDs Graduate Without Top-Tier Papers?](https://www.reddit.com/r/MachineLearning/comments/1uazlhg/would_you_let_an_ml_phd_student_graduate_without/) ⭐️ 7.0/10
+## [Where Is Ideal Embodied Intelligence? Chips, Brain, New Paradigm](https://news.google.com/rss/articles/CBMisgFBVV95cUxQOHNoNHZNYXIxd2JJekJBZmp3V0JDd3pXNkVtcHBMNUttMm1XSkFQTER3d2NNZHZlcEtmc2Zmc1U3SFRWT3lYakZhWlRxVFBnTHRkVU5OcVpaQk5rUVgwVlE2N3dYelpFeTNaMVE5ZU5ZckN0bUVDM085eU1iX3Q1cXVxYVVCRVFaQVJxS1A1LWtneFczRHBCQ1NybzV5OHdPMTVpQU4tc3JRYnJneUIxTkR3?oc=5) ⭐️ 6.0/10
 
-A Reddit discussion asks whether an ML PhD advisor should support a student's graduation if the student has three first-author A-level papers but no publication in top-tier venues like NeurIPS, ICML, ICLR, or CVPR. This debate highlights the tension between publication metrics and the quality of a thesis, affecting PhD policies and student well-being across ML programs worldwide. The student has been in the program for 4 years, has a coherent thesis direction, and solid work, but lacks publications in A* ML venues or top journals.
+An article from Sina Finance explores the current state of embodied intelligence, focusing on dedicated chips, brain-like systems, and a new paradigm for humanoid robots. This overview highlights the convergence of hardware and software innovations driving humanoid robotics, which could transform industries like manufacturing and healthcare. The article discusses a 'one chip, one brain, one new paradigm' approach, but lacks specific technical details or benchmarks. It appears to be a high-level summary rather than a deep technical analysis.
 
-reddit · r/MachineLearning · /u/Hope999991 · Jun 20, 15:36
+rss · 人形机器人与具身智能（中文） · Jun 19, 08:41
 
-**Background**: In machine learning academia, top-tier conferences like NeurIPS, ICML, ICLR, and CVPR are considered the gold standard for publication. Many PhD programs implicitly or explicitly require such publications for graduation, though policies vary.
+**Background**: Embodied intelligence (EAI) integrates AI into physical entities like robots, enabling perception, learning, and dynamic interaction with the environment. Humanoid robots are designed to resemble the human body and work alongside humans. Recent advances in transformer-based models and specialized chips are shifting the paradigm from pre-programmed robots to adaptive, data-driven intelligence.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://blog.csdn.net/a1920993165/article/details/137727367">计算机常见的六大会议介绍： CVPR /ICCV/ECCV...</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Embodied_cognition">Embodied cognition - Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Humanoid_robot">Humanoid robot - Wikipedia</a></li>
+<li><a href="https://www.automate.org/news/humanoid-robots-definition-capabilities-and-industrial-reality">News: What Is a Humanoid Robot? Definition, Capabilities, and Industrial Reality</a></li>
 
 </ul>
 </details>
 
-**Discussion**: The discussion likely includes diverse viewpoints: some argue that solid A-level papers and a strong thesis should suffice, while others insist on top-tier publications as a necessary signal of research excellence.
-
-**Tags**: `#machine learning`, `#PhD`, `#academia`, `#publication`, `#graduate education`
+**Tags**: `#embodied intelligence`, `#humanoid robots`, `#chips`, `#paradigm`
 
 ---
 
 <a id="item-13"></a>
-## [DVD-JEPA: Open-Source Minimal JEPA World Model](https://www.reddit.com/r/MachineLearning/comments/1uatlzx/dvdjepa_an_opensource_fullyreproducible_jepa/) ⭐️ 7.0/10
+## [Pudong Accelerates Full-Chain Layout for Embodied AI](https://news.google.com/rss/articles/CBMimAFBVV95cUxObHIyWnM5SVgxY0E0Nnk3OEZ4OXRDbXZDTVY3R0xKUEM4SzZBaDdEU3FqWVdVenhGZnZQTnFUaEd2cjV4QU9kQjV4YXAzRzZDLWNtUnRjRXpLTlZVRHF0dFI3U21RNldPSTlaS05zcjdKazV4Q3FlMFl5ZFJBOFpvSXVKdnY3cHRlZm5ZWG4tZXFOX25tenJHSw?oc=5) ⭐️ 6.0/10
 
-Researchers released DVD-JEPA, a fully reproducible, open-source implementation of the Joint-Embedding Predictive Architecture (JEPA) that learns to predict latent representations instead of pixels, demonstrated on a bouncing DVD logo in a 16×16 grid. 这项工作提供了JEPA的最小诚实演示，使该架构易于实验和教育，并表明即使是最小模型也能学习用于异常检测和未来预测的有用世界表示。 A linear probe recovers the logo's exact (y,x) position from the frozen 32-dimensional latent space to within 0.73 pixels, and the model runs client-side in a browser with ~40 lines of JavaScript.
+Pudong New Area in Shanghai is accelerating its full-chain industrial layout to become a leading hub for embodied AI and humanoid robotics, as reported by Sina Finance. This policy-driven push signals China's strategic commitment to dominating the emerging embodied AI industry, which could accelerate deployment of humanoid robots in manufacturing and services globally. The report highlights a 'full-chain' approach covering R&D, manufacturing, and application, but does not disclose specific funding amounts or timelines.
 
-reddit · r/MachineLearning · /u/NielsRogge · Jun 20, 10:52
+rss · 人形机器人与具身智能（中文） · Jun 19, 11:30
 
-**Background**: JEPA (Joint-Embedding Predictive Architecture) is a self-supervised learning method proposed by Yann LeCun that predicts abstract latent representations rather than reconstructing pixels or tokens. It uses an EMA target encoder to prevent representation collapse. DVD-JEPA is a minimal implementation that demonstrates the core ideas of I-JEPA and V-JEPA.
+**Background**: Embodied AI refers to AI systems embedded in physical bodies (e.g., robots) that perceive and act in the real world. Humanoid robots are a key application, aiming to perform human-like tasks. Pudong already hosts major AI and robotics companies, and this initiative seeks to consolidate the supply chain.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://www.linkedin.com/pulse/world-models-jepa-next-evolution-ai-architecture-dmitry-shapiro-1xcsc">World Models and JEPA : The Next Evolution in AI Architecture</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Joint_Embedding_Predictive_Architecture">Joint Embedding Predictive Architecture</a></li>
-<li><a href="https://github.com/ishandutta2007/JEPA-Tutorial/tree/main/chapters/06-target-and-context-encoders">Chapter 6: Target and Context Encoders - GitHub</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Embodied_cognition">Embodied cognition</a></li>
+<li><a href="https://www.agilityrobotics.com/">Industrial Humanoid Automation | Agility</a></li>
 
 </ul>
 </details>
 
-**Discussion**: The Reddit community praised the project for its clarity and reproducibility, with some noting it as a great educational tool for understanding JEPA. A few commenters discussed the limitations of the toy environment and suggested extensions to more complex domains.
-
-**Tags**: `#world models`, `#JEPA`, `#self-supervised learning`, `#video prediction`, `#open-source`
+**Tags**: `#industry policy`, `#China`, `#embodied AI`, `#deployment`
 
 ---
 
 <a id="item-14"></a>
-## [Global PM2.5 Forecaster ML Model with Horizon-Aligned Architecture](https://www.reddit.com/r/MachineLearning/comments/1uar4vc/built_a_global_aq_pm25_forecaster_ml_model_p/) ⭐️ 7.0/10
+## [Solving Long-Horizon Tasks in Embodied AI: Data Scaling vs. Hierarchical Control](https://news.google.com/rss/articles/CBMijAFBVV95cUxQcFd4bmhhLTFpU3hocGpVVWVoazVBYS1NSmYxUFFuUUJEX2lPTXNBbE84djROU2Y5OGlmbEFiUE5Ja3plMDhscXhBcXp2U0JSVHd2UU4yRi1xaDBtN2Rkd0ZjY0RHQ0ZHRnNpZm5zQUtIZEpSRG52TUNzS2RKTTJkTmtXSnlQN21EbkpFTg?oc=5) ⭐️ 6.0/10
 
-A practitioner built an end-to-end PM2.5 forecasting pipeline for four countries using 1.6M+ data rows, and introduced a horizon-aligned architecture to overcome the variance trap, reducing MASE below 1.0 globally. This work addresses a common failure mode in time series forecasting—the variance trap—where naive baselines outperform ML models in chaotic environments. The horizon-aligned architecture offers a practical solution that can be applied to other volatile forecasting domains. The model uses scikit-learn Gradient Boosting Regressor with decoupled horizons (h=1, 7, 14, 30) and a 3-day rolling volatility matrix to prevent data leakage. The author plans to migrate to XGBoost or LightGBM for better handling of sparse temporal features.
+An article from Sohu discusses two competing approaches to address long-horizon tasks in embodied AI: brute-force data scaling and hierarchical control. It highlights the trade-offs between scaling up real-world data collection and using layered control architectures. Long-horizon tasks are a critical bottleneck for embodied AI, as robots must perform extended sequences of actions in dynamic environments. The choice between data scaling and hierarchical control will shape the future of robotics, affecting everything from household assistants to industrial automation. Data scaling relies on massive real-world datasets (e.g., Scale AI collecting 1,000 hours of robotics data daily) and neural scaling laws, while hierarchical control splits tasks into high-level planning and low-level actuation layers. The article notes that each approach has limitations: data scaling is expensive and may not generalize, whereas hierarchical control requires careful design of interfaces between layers.
 
-reddit · r/MachineLearning · /u/Divyanshailani · Jun 20, 08:20
+rss · 人形机器人与具身智能（中文） · Jun 20, 06:37
 
-**Background**: The variance trap occurs when a forecasting model fails to capture sudden shifts in volatile time series, leading to errors larger than a naive carryover forecast. MASE (Mean Absolute Scaled Error) compares model error to a naive baseline; a value above 1.0 indicates the model is worse than the baseline. Horizon-aligned architecture trains separate models for each forecast horizon to avoid error compounding from recursive multi-step forecasting.
+**Background**: Embodied AI refers to AI systems that interact with the physical world through a body, such as robots. Long-horizon tasks require the agent to reason and act over many steps, often with partial observability and changing conditions. Hierarchical control is a well-established robotics framework that decomposes complex behaviors into manageable sub-tasks, while data scaling is a recent trend inspired by large language models that uses vast amounts of training data to improve performance.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Mean_absolute_scaled_error">Mean absolute scaled error - Wikipedia</a></li>
-<li><a href="https://tech.ajinhub.com/en/blog/the-forecasting-trap-navigating-latent-chaos-in-time-series/">The Forecasting Trap: Navigating Latent Chaos in Time Series</a></li>
+<li><a href="https://arxiv.org/abs/2606.05660">[2606.05660] Safe Embodied AI for Long - horizon Tasks ...</a></li>
+<li><a href="https://www.emergentmind.com/topics/hierarchical-whole-body-control">Hierarchical Whole-Body Control in Robotics</a></li>
+<li><a href="https://arxiv.org/html/2405.14005v1">Neural Scaling Laws for Embodied AI - arXiv</a></li>
 
 </ul>
 </details>
 
-**Discussion**: No community comments were provided in the news item.
-
-**Tags**: `#machine learning`, `#time series forecasting`, `#air quality`, `#gradient boosting`, `#ML engineering`
+**Tags**: `#embodied AI`, `#long-horizon tasks`, `#hierarchical control`, `#data scaling`
 
 ---
 
 <a id="item-15"></a>
-## [TownSquare: A Lightweight Presence Layer for Websites](https://townsquare.cauenapier.com/) ⭐️ 6.0/10
+## [Beijing Mayor Investigates Embodied Intelligent Robot Industry](https://news.google.com/rss/articles/CBMiYkFVX3lxTE8wVUltNXA2RlBWanF4VUpTX0tIbnlEZU0yVHVDNmZKeWpiVkpUMHh2UFN6WGdSenBHOXZVcE1TR2cwTklJbkE5SFUtWE5aUDFJYkNrb1BaVkMtam9pTjRkazl3?oc=5) ⭐️ 6.0/10
 
-TownSquare is a lightweight presence layer that enables real-time chat among visitors on a website, allowing them to see and communicate with each other. The project was released as an open-source tool, but its live demo quickly became filled with offensive messages, highlighting moderation challenges. This project explores a niche use case for real-time social interaction on websites, which could enhance community engagement for small sites. However, the immediate trolling and moderation issues underscore a critical barrier to adoption for such tools. TownSquare is designed as a tiny, embeddable widget that shows who else is on the same page and allows chatting. The developer noted that on iOS, flooding the channel with messages caused resource issues and endless page reloads.
+Beijing's mayor conducted a research visit to investigate the development of the embodied intelligent robot industry, signaling increased government attention and potential policy support for humanoid robotics. This visit indicates that the Chinese government is prioritizing embodied AI and humanoid robotics, which could accelerate industry growth, attract investment, and influence global competition in advanced robotics. The news is a brief report from a mobile news portal without specific technical details or policy announcements, but it highlights high-level government engagement with the embodied intelligent robot sector.
 
-hackernews · cauenapier · Jun 20, 11:55 · [Discussion](https://news.ycombinator.com/item?id=48608570)
+rss · 人形机器人与具身智能（中文） · Jun 20, 02:14
 
-**Background**: A presence layer in web development refers to a system that shows the online status and activity of users, often used in collaborative or social applications. Real-time visitor chat tools like Visitor Chat or Now4real provide similar functionality but are typically managed services with built-in moderation. TownSquare is a self-hosted alternative that gives developers more control but requires them to handle moderation themselves.
+**Background**: Embodied intelligence (EI) is a frontier field combining AI and robotics, where agents interact with the physical world through a body. Humanoid robots are a key application. The Chinese government has been actively promoting AI and robotics as strategic industries, and this visit aligns with that trend.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Multitier_architecture">Multitier architecture - Wikipedia</a></li>
-<li><a href="https://now4real.com/">Now4real - AI-Moderated Group Chats for Instant Visitor ...</a></li>
-<li><a href="https://visitor.chat/">Home | Visitor Chat</a></li>
+<li><a href="https://www.jaka.com/zh">jaka.com/zh</a></li>
+<li><a href="https://www.woshipm.com/ai/6284719.html">走进现实世界： 具 身 智 能 体与 机 器 人 | 人 人 都是产品经理</a></li>
 
 </ul>
 </details>
 
-**Discussion**: Commenters widely noted that the live demo was overrun with offensive content, with one user saying it was 'largely full of people saying offensive things for the sake of it.' The developer also asked for advice on preventing trolling and resource abuse, while another commenter shared a similar project with keyword-based moderation that was easily bypassed.
-
-**Tags**: `#real-time chat`, `#web development`, `#moderation`, `#presence layer`
-
----
-
-<a id="item-16"></a>
-## [UHF X11 Brings X11 Window System to Apple Vision Pro](https://www.lispm.net/apps/uhf-x11/) ⭐️ 6.0/10
-
-UHF X11 ports the classic X11 windowing system to visionOS, allowing legacy Unix GUI applications to run in a 3D environment on Apple Vision Pro. This project bridges the gap between vintage Unix software and modern mixed reality hardware, enabling developers and enthusiasts to use decades-old applications in a spatial computing context. The project supports GLX rendering for OpenGL clients, though compatibility varies. It uses TWM as the default window manager, as shown in the screenshot.
-
-hackernews · zdw · Jun 20, 17:04 · [Discussion](https://news.ycombinator.com/item?id=48610853)
-
-**Background**: The X Window System (X11) is a windowing system for bitmap displays, common on Unix-like operating systems since 1984. visionOS is Apple's mixed reality operating system for the Apple Vision Pro headset, released in February 2024.
-
-<details><summary>References</summary>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/X_Windowing_System">X Windowing System</a></li>
-<li><a href="https://en.wikipedia.org/wiki/VisionOS">VisionOS</a></li>
-
-</ul>
-</details>
-
-**Discussion**: Commenters found humor in the concept of "3D in 2D in 3D" and noted the nostalgic use of TWM and xeyes. Some pointed to WayVR as an alternative for Linux users, while others speculated on the longevity of visionOS compared to X11.
-
-**Tags**: `#X11`, `#VisionOS`, `#Apple Vision Pro`, `#VR/AR`, `#Linux`
-
----
-
-<a id="item-17"></a>
-## [TSAuditor: Open-source tool for time-series data validation](https://www.reddit.com/r/MachineLearning/comments/1ub15wf/tsauditor_a_timeseries_auditing_framework_p/) ⭐️ 6.0/10
-
-A practitioner released TSAuditor, an open-source Python library that detects chronological breaks, data leakage, and sequential anomalies in time-series tabular data, providing structured reports and suggested fixes. Time-series data issues like leakage and broken chronology are common but often overlooked, leading to overly optimistic model performance; TSAuditor simplifies detection and helps practitioners avoid costly mistakes in ML pipelines. TSAuditor is lightweight, available on PyPI, and can be used without defining a domain; it includes an example notebook with a side-by-side comparison against standard profiling tools.
-
-reddit · r/MachineLearning · /u/severecaseofsarcarsm · Jun 20, 16:41
-
-**Background**: Time-series data requires careful handling of temporal order; common pitfalls include data leakage (using future information to predict the past) and chronological breaks (gaps or misordered timestamps). Standard profiling tools often miss these issues because they treat data as independent samples. TSAuditor specifically targets these structural problems by scanning for broken sequences, leakage between features and target, and sudden spikes beyond global bounds.
-
-<details><summary>References</summary>
-<ul>
-<li><a href="https://github.com/imann128/tsauditor">GitHub - imann128/tsauditor: A data quality auditing library ...</a></li>
-<li><a href="https://github.com/imann128/tsauditor/releases">Releases · imann128/tsauditor · GitHub</a></li>
-
-</ul>
-</details>
-
-**Tags**: `#time-series`, `#data validation`, `#ML pipeline`, `#open source`
+**Tags**: `#policy`, `#China`, `#government support`, `#embodied AI`
 
 ---
