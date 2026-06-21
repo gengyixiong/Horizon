@@ -135,6 +135,7 @@
       "min_views_per_day": 200,
       "max_candidates": 12,
       "max_items": 3,
+      "min_ai_score": 4.0,
       "transcript_languages": ["en", "en-US", "zh-Hans", "zh-CN", "zh"],
       "category": "long-form"
     },

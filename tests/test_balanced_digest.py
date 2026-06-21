@@ -14,6 +14,7 @@ from src.models import (
     FilteringConfig,
     SourceType,
     SourcesConfig,
+    YouTubeConfig,
 )
 from src.orchestrator import HorizonOrchestrator
 
@@ -144,7 +145,14 @@ def test_run_applies_balanced_digest_before_enrichment(tmp_path, monkeypatch) ->
             api_key_env="TEST_API_KEY",
             languages=[],
         ),
-        sources=SourcesConfig(),
+        sources=SourcesConfig(
+            youtube=YouTubeConfig(
+                enabled=True,
+                queries=["humanoid interview"],
+                min_ai_score=4.0,
+                max_items=3,
+            )
+        ),
         filtering=FilteringConfig(
             ai_score_threshold=7.0,
             max_items=1,
@@ -160,6 +168,7 @@ def test_run_applies_balanced_digest_before_enrichment(tmp_path, monkeypatch) ->
         make_item("ai", 9.0, "ai"),
         make_item("finance", 8.0, "finance"),
         make_item("below-threshold", 6.0, "ai"),
+        make_item("long-form", 4.5, "long-form"),
     ]
     enriched_ids: list[str] = []
 
@@ -187,4 +196,4 @@ def test_run_applies_balanced_digest_before_enrichment(tmp_path, monkeypatch) ->
 
     asyncio.run(orchestrator.run())
 
-    assert enriched_ids == ["ai"]
+    assert enriched_ids == ["ai", "long-form"]

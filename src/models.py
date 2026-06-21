@@ -159,6 +159,9 @@ class YouTubeConfig(BaseModel):
     min_views_per_day: float = Field(default=200.0, ge=0)
     max_candidates: int = Field(default=12, ge=1, le=50)
     max_items: int = Field(default=3, ge=1, le=10)
+    # Long interviews are valuable without being breaking news, so they use a
+    # separate AI threshold from the fast-news lane.
+    min_ai_score: float = Field(default=4.0, ge=0, le=10)
     transcript_languages: List[str] = Field(
         default_factory=lambda: ["en", "en-US", "zh-Hans", "zh-CN", "zh"]
     )

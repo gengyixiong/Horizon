@@ -113,6 +113,7 @@ Uses the official YouTube Data API v3 to search for long interviews and podcast 
   "min_views_per_day": 200,
   "max_candidates": 12,
   "max_items": 3,
+  "min_ai_score": 4.0,
   "transcript_languages": ["en", "zh-Hans", "zh"]
 }
 ```

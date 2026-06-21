@@ -106,25 +106,36 @@ class HorizonOrchestrator:
 
             # 5. Filter by score threshold
             threshold = self.config.filtering.ai_score_threshold
-            important_items = [
-                item for item in analyzed_items
-                if item.ai_score and item.ai_score >= threshold
+            long_form_threshold = (
+                self.config.sources.youtube.min_ai_score
+                if self.config.sources.youtube
+                else threshold
+            )
+            news_items = [
+                item
+                for item in analyzed_items
+                if not self._is_long_form(item)
+                and item.ai_score
+                and item.ai_score >= threshold
             ]
-            important_items.sort(key=lambda x: x.ai_score or 0, reverse=True)
+            long_form_items = [
+                item
+                for item in analyzed_items
+                if self._is_long_form(item)
+                and item.ai_score
+                and item.ai_score >= long_form_threshold
+            ]
+            news_items.sort(key=lambda x: x.ai_score or 0, reverse=True)
+            long_form_items.sort(key=lambda x: x.ai_score or 0, reverse=True)
 
             self.console.print(
-                f"⭐️ {len(important_items)} items scored ≥ {threshold}\n"
+                f"⭐️ {len(news_items)} news items scored ≥ {threshold}; "
+                f"{len(long_form_items)} long-form items scored ≥ "
+                f"{long_form_threshold}\n"
             )
 
             # Keep long-form interviews separate from fast news. They use an
             # independent cap and are rendered in their own page section.
-            news_items = [
-                item for item in important_items if not self._is_long_form(item)
-            ]
-            long_form_items = [
-                item for item in important_items if self._is_long_form(item)
-            ]
-
             # 5.5 Semantic deduplication within each content lane. Do not let a
             # breaking-news article remove a deeper interview on the same topic.
             deduped_news = await self.merge_topic_duplicates(news_items)
